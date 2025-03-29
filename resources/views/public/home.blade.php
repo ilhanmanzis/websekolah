@@ -596,7 +596,7 @@
                         </g>
                     </svg>
                     <a href="https://api.whatsapp.com/send?phone="
-                        class="text-blue-950 font-semibold text-md pl-3 text-justify">0274 - 542604</s>
+                        class="text-blue-950 font-semibold text-md pl-3 text-justify">0274 - 542604</a>
                 </div>
             </div>
 
@@ -604,7 +604,7 @@
 
         {{-- start kotak saran --}}
         <div class="text-blue-950 mx-20 text-2xl font-bold">Kotak Saran</div>
-        <form class="max-w-12/12 mx-20 py-5">
+        <form class="max-w-12/12 md:mx-20 py-5 mx-5">
             <div class="mb-5">
                 <input type="text" id="name"
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
