@@ -25,7 +25,7 @@
 
                         {{-- start profile sekolah --}}
                         <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar"
-                            class="{{ $page == 'Home' ? 'text-white' : 'text-dark' }} font-medium  flex items-center justify-between w-full py-2 px-3 md:hover:bg-transparent md:border-0 hover:text-yellow-500 md:p-0 md:w-auto dark:text-white dark:hover:text-yellow-500 dark:focus:text-white dark:hover:bg-gray-700 md:dark:hover:bg-transparent">Profile
+                            class="{{ $page == 'Home' ? 'text-white' : 'text-dark' }} font-medium  flex items-center justify-between w-full py-2 px-3 md:hover:bg-transparent md:border-0 hover:text-yellow-500 md:p-0 md:w-auto   focus:text-white  ">Profile
                             Sekolah
                             <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                 id="dropdownNavbarLink" fill="none" viewBox="0 0 10 6">
@@ -34,7 +34,7 @@
                             </svg></button>
                         <!-- Dropdown menu -->
                         <div id="dropdownNavbar"
-                            class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44 dark:bg-gray-700 dark:divide-gray-600">
+                            class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44  ">
                             <div class="py-1">
                                 <x-sub-nav-link href="{{ url('/') }}/sambutan" :active="request()->is('/')">Kata
                                     Sambutan</x-sub-nav-link>
@@ -47,21 +47,19 @@
                                 <x-sub-nav-link href="{{ url('/') }}/visimisi" :active="request()->is('/')">Visi &
                                     Misi</x-sub-nav-link>
                             </div>
-                            <ul class="py-1 text-sm text-gray-700 dark:text-gray-200"
-                                aria-labelledby="dropdownLargeButton">
+                            <ul class="py-1 text-sm text-gray-700 " aria-labelledby="dropdownLargeButton">
                                 <li aria-labelledby="dropdownNavbarLink">
                                     <button id="doubleDropdownButton" data-dropdown-toggle="doubleDropdown"
                                         data-dropdown-placement="right-start" type="button"
-                                        class="flex items-center justify-between w-full px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Struktur
+                                        class="flex items-center justify-between w-full px-3 py-2 hover:bg-gray-100  ">Struktur
                                         Organisasi<svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true"
                                             xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                                 stroke-width="2" d="m1 1 4 4 4-4" />
                                         </svg></button>
                                     <div id="doubleDropdown"
-                                        class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44 dark:bg-gray-700">
-                                        <ul class="py-2 text-sm text-gray-700 dark:text-gray-200"
-                                            aria-labelledby="doubleDropdownButton">
+                                        class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44 ">
+                                        <ul class="py-2 text-sm text-gray-700 " aria-labelledby="doubleDropdownButton">
                                             <li>
                                                 <x-sub-nav-link href="{{ url('/') }}/organisasi/sekolah"
                                                     :active="request()->is('/')">Sekolah</x-sub-nav-link>
@@ -78,21 +76,19 @@
 
 
                             </ul>
-                            <ul class="py-1 text-sm text-gray-700 dark:text-gray-200"
-                                aria-labelledby="dropdownLargeButton">
+                            <ul class="py-1 text-sm text-gray-700 " aria-labelledby="dropdownLargeButton">
                                 <li aria-labelledby="dropdownNavbarLink">
                                     <button id="doubleDropdownButton2" data-dropdown-toggle="doubleDropdown2"
                                         data-dropdown-placement="right-start" type="button"
-                                        class="flex items-center justify-between w-full px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Staf
+                                        class="flex items-center justify-between w-full px-3 py-2 hover:bg-gray-100  ">Staf
                                         <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true"
                                             xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                                 stroke-width="2" d="m1 1 4 4 4-4" />
                                         </svg></button>
                                     <div id="doubleDropdown2"
-                                        class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44 dark:bg-gray-700">
-                                        <ul class="py-2 text-sm text-gray-700 dark:text-gray-200"
-                                            aria-labelledby="doubleDropdownButton2">
+                                        class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44 ">
+                                        <ul class="py-2 text-sm text-gray-700 " aria-labelledby="doubleDropdownButton2">
                                             <li>
                                                 <x-sub-nav-link href="{{ url('/') }}/staf/pendidik"
                                                     :active="request()->is('/')">Tenaga
@@ -116,7 +112,7 @@
 
                         {{-- start berita --}}
                         <button id="dropdownNavbarLink3" data-dropdown-toggle="dropdownNavbar3"
-                            class="{{ $page == 'Home' ? 'text-white' : 'text-dark' }} font-medium  flex items-center justify-between w-full py-2 px-3 md:hover:bg-transparent md:border-0 hover:text-yellow-500 md:p-0 md:w-auto dark:text-white dark:hover:text-yellow-500 dark:focus:text-white dark:hover:bg-gray-700 md:dark:hover:bg-transparent">Berita
+                            class="{{ $page == 'Home' ? 'text-white' : 'text-dark' }} font-medium  flex items-center justify-between w-full py-2 px-3 md:hover:bg-transparent md:border-0 hover:text-yellow-500 md:p-0 md:w-auto     md:">Berita
                             <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                 id="dropdownNavbarLink2" fill="none" viewBox="0 0 10 6">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -124,7 +120,7 @@
                             </svg></button>
 
                         <div id="dropdownNavbar3"
-                            class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44 dark:bg-gray-700 dark:divide-gray-600">
+                            class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44  ">
                             <div class="py-1">
                                 <x-sub-nav-link href="{{ url('/') }}/berita" :active="request()->is('/')">Berita
                                     Terbaru</x-sub-nav-link>
@@ -139,7 +135,7 @@
                         {{-- start layanan --}}
 
                         <button id="dropdownNavbarLink2" data-dropdown-toggle="dropdownNavbar2"
-                            class="{{ $page == 'Home' ? 'text-white' : 'text-dark' }} font-medium  flex items-center justify-between w-full py-2 px-3 md:hover:bg-transparent md:border-0 hover:text-yellow-500 md:p-0 md:w-auto dark:text-white dark:hover:text-yellow-500 dark:focus:text-white dark:hover:bg-gray-700 md:dark:hover:bg-transparent">Layanan
+                            class="{{ $page == 'Home' ? 'text-white' : 'text-dark' }} font-medium  flex items-center justify-between w-full py-2 px-3 md:hover:bg-transparent md:border-0 hover:text-yellow-500 md:p-0 md:w-auto     md:">Layanan
                             <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                 id="dropdownNavbarLink2" fill="none" viewBox="0 0 10 6">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -147,7 +143,7 @@
                             </svg></button>
 
                         <div id="dropdownNavbar2"
-                            class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44 dark:bg-gray-700 dark:divide-gray-600">
+                            class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44  ">
                             <div class="py-1">
                                 <x-sub-nav-link href="{{ url('/') }}/ekstrakurikuler"
                                     :active="request()->is('/')">Ekstrakurikuler</x-sub-nav-link>
@@ -206,7 +202,7 @@
             {{-- start profile sekolah --}}
             <div class="text-dark font-medium  w-full pt-2 px-3">
                 <button id="mobileDropdownButton"
-                    class="flex items-center justify-between w-full md:hover:bg-transparent md:border-0 hover:text-yellow-500 md:p-0 md:w-auto dark:text-white dark:hover:text-yellow-500 dark:focus:text-white dark:hover:bg-gray-700 md:dark:hover:bg-transparent cursor-pointer text-sm pb-2 border-b border-gray-400">
+                    class="flex items-center justify-between w-full md:hover:bg-transparent md:border-0 hover:text-yellow-500 md:p-0 md:w-auto     md: cursor-pointer text-sm pb-2 border-b border-gray-400">
                     Profile Sekolah
                     <svg class="w-2.5 h-2.5 ms-2.5 -rotate-90" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                         id="dropdownNavbarLink1" fill="none" viewBox="0 0 10 6">
@@ -223,7 +219,7 @@
 
                     <div class="text-dark font-medium  w-full py-2 pl-3 md:px-3">
                         <button id="mobileDropdownButton11"
-                            class="flex items-center justify-between w-full md:hover:bg-transparent md:border-0 hover:text-yellow-500 md:p-0 md:w-auto dark:text-white dark:hover:text-yellow-500 dark:focus:text-white dark:hover:bg-gray-700 md:dark:hover:bg-transparent cursor-pointer text-sm pb-2 border-b border-gray-400">
+                            class="flex items-center justify-between w-full md:hover:bg-transparent md:border-0 hover:text-yellow-500 md:p-0 md:w-auto   focus:   cursor-pointer text-sm pb-2 border-b border-gray-400">
                             Struktur Organisasi
                             <svg class="w-2.5 h-2.5 ms-2.5 -rotate-90" aria-hidden="true"
                                 xmlns="http://www.w3.org/2000/svg" id="dropdownNavbarLink11" fill="none"
@@ -242,7 +238,7 @@
                     </div>
                     <div class="text-dark font-medium  w-full pl-3 md:px-3">
                         <button id="mobileDropdownButton12"
-                            class="flex items-center justify-between w-full  md:hover:bg-transparent md:border-0 hover:text-yellow-500 md:p-0 md:w-auto dark:text-white dark:hover:text-yellow-500 dark:focus:text-white dark:hover:bg-gray-700 md:dark:hover:bg-transparent cursor-pointer text-sm pb-2 border-b border-gray-400">
+                            class="flex items-center justify-between w-full  md:hover:bg-transparent md:border-0 hover:text-yellow-500 md:p-0 md:w-auto  cursor-pointer text-sm pb-2 border-b border-gray-400">
                             Staf
                             <svg class="w-2.5 h-2.5 ms-2.5 -rotate-90" aria-hidden="true"
                                 xmlns="http://www.w3.org/2000/svg" id="dropdownNavbarLink12" fill="none"
@@ -265,7 +261,7 @@
             {{-- start berita --}}
             <div class="text-dark font-medium  w-full py-2 px-3">
                 <button id="mobileDropdownButton2"
-                    class="flex items-center justify-between w-full md:hover:bg-transparent md:border-0 hover:text-yellow-500 md:p-0 md:w-auto dark:text-white dark:hover:text-yellow-500 dark:focus:text-white dark:hover:bg-gray-700 md:dark:hover:bg-transparent cursor-pointer text-sm pb-2 border-b border-gray-400">
+                    class="flex items-center justify-between w-full md:hover:bg-transparent md:border-0 hover:text-yellow-500 md:p-0 md:w-auto  cursor-pointer text-sm pb-2 border-b border-gray-400">
                     Berita
                     <svg class="w-2.5 h-2.5 ms-2.5 -rotate-90" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                         id="dropdownNavbarLink4" fill="none" viewBox="0 0 10 6">
@@ -285,7 +281,7 @@
 
             <div class="text-dark font-medium  w-full px-3">
                 <button id="mobileDropdownButton3"
-                    class="flex items-center justify-between w-full md:hover:bg-transparent md:border-0 hover:text-yellow-500 md:p-0 md:w-auto dark:text-white dark:hover:text-yellow-500 dark:focus:text-white dark:hover:bg-gray-700 md:dark:hover:bg-transparent cursor-pointer text-sm pb-2 border-b border-gray-400">
+                    class="flex items-center justify-between w-full md:hover:bg-transparent md:border-0 hover:text-yellow-500 md:p-0 md:w-auto  cursor-pointer text-sm pb-2 border-b border-gray-400">
                     Layanan
                     <svg class="w-2.5 h-2.5 ms-2.5 -rotate-90" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                         id="dropdownNavbarLink5" fill="none" viewBox="0 0 10 6">
