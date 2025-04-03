@@ -5,17 +5,16 @@
             <!-- Logo & Deskripsi -->
             <div class="max-w-sm">
                 <h1 class="text-2xl font-bold flex items-center">
-                    <img src="{{ url('/') }}/images/logo/logo.png" alt="Logo" class="size-20 h-full mr-5" />
-                    <span>SMA NEGERI 1 KASUI</span>
+                    <img src="{{ asset('storage/logo/' . $profile['logo']) }}" alt="Logo"
+                        class="size-20 h-full mr-5" />
+                    <span>{{ $profile['nama_sekolah'] }}</span>
                 </h1>
                 <p class="mt-4 text-white text-justify pr-5">
-                    SMA Negeri 1 KASUI Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda maxime beatae
-                    quas non laborum numquam repellat optio labore deserunt odio, error voluptatem reprehenderit iure
-                    obcaecati eum ad eos quam accusantium.
+                    {!! Str::limit($sejarah['isi'], 240, '...') !!}
                 </p>
                 <!-- Sosial Media -->
                 <div class="flex space-x-4 mt-6 border-t border-dashed pt-4 mr-5">
-                    <a href="#" class="text-white hover:text-white">
+                    <a href="{{ $kontak['facebook'] }}" class="text-white hover:text-white">
                         <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100"
                             viewBox="0 0 24 24" fill="currentColor" class="text-white size-10 hover:text-yellow-500">
                             <path
@@ -23,7 +22,7 @@
                             </path>
                         </svg>
                     </a>
-                    <a href="#" class="text-white hover:text-white">
+                    <a href="{{ $kontak['instagram'] }}" class="text-white hover:text-white">
                         <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100"
                             viewBox="0 0 24 24" fill="currentColor" class="text-white size-10 hover:text-yellow-500">
                             <path
@@ -31,7 +30,7 @@
                             </path>
                         </svg>
                     </a>
-                    <a href="#" class="text-white hover:text-white">
+                    <a href="{{ $kontak['youtube'] }}" class="text-white hover:text-white">
                         <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100"
                             viewBox="0 0 24 24" fill="currentColor" class="text-white size-10 hover:text-yellow-500">
                             <path
@@ -39,7 +38,8 @@
                             </path>
                         </svg>
                     </a>
-                    <a href="https://api.whatsapp.com/send?phone=" class="text-white hover:text-white">
+                    <a href="https://api.whatsapp.com/send?phone={{ $kontak['wa'] }}"
+                        class="text-white hover:text-white">
                         <svg fill="currentColor" version="1.1" id="Layer_1"
                             class="text-white size-9 pt-1 hover:text-yellow-500" xmlns="http://www.w3.org/2000/svg"
                             xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 308 308" xml:space="preserve">
@@ -71,32 +71,21 @@
             <div class="max-w-sm md:mx-2 mx-0 md:py-0 py-10 md:px-5 px-0">
                 <h2 class="text-lg font-semibold mb-4">INFO SEKOLAH</h2>
                 <div class="space-y-4">
-                    <div class="flex space-x-4 border-b border-dashed">
-                        <img src="{{ url('/') }}/images/banner/bg.jpg" alt="Info 1"
-                            class="w-18 h-18 rounded-lg" />
-                        <div>
-                            <a href="{{ url('/') }}/info/1"
-                                class="hover:text-white text-yellow-400 font-semibold">PENILAIAN AKHIR
-                                SEMESTER...</a>
-                            <p class="text-white text-sm py-2">15 Nov, 2024</p>
-                            <p class="text-white text-justify pr-2 pb-4">
-                                Yth. Bapak/ Ibu Orang tua/ Wali Siswa Kelas X, XI dan XII SMAN...
-                            </p>
+                    @foreach ($infos as $info)
+                        <div class="flex space-x-4 border-b border-dashed">
+                            <img src="{{ asset('storage/banner/' . $info['image']) }}" alt="{{ $info['image'] }}"
+                                class="w-18 h-18 rounded-lg" />
+                            <div>
+                                <a href="{{ url('/') }}/info/{{ $info['id_info'] }}"
+                                    class="hover:text-white text-yellow-400 font-semibold">{{ Str::limit($info['judul'], 20, '...') }}</a>
+                                <p class="text-white text-sm py-2">{{ $info['tanggal'] }}</p>
+                                <p class="text-white text-justify pr-2 pb-4">
+                                    {{ Str::limit($info['isi'], 50, '...') }}
+                                </p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="flex space-x-4 border-b border-dashed">
-                        <img src="{{ url('/') }}/images/banner/bg.jpg" alt="Info 1"
-                            class="w-18 h-18 rounded-lg" />
-                        <div>
-                            <a href="{{ url('/') }}/info/1"
-                                class="hover:text-white text-yellow-400 font-semibold">PENILAIAN AKHIR
-                                SEMESTER...</a>
-                            <p class="text-white text-sm py-2">15 Nov, 2024</p>
-                            <p class="text-white text-justify pr-2 pb-4">
-                                Yth. Bapak/ Ibu Orang tua/ Wali Siswa Kelas X, XI dan XII SMAN...
-                            </p>
-                        </div>
-                    </div>
+                    @endforeach
+
                     <a href="{{ url('/') }}/info"
                         class=" text-white font-bold text-md cursor-pointer hover:underline">
                         READ MORE »
@@ -109,32 +98,22 @@
             <div class="max-w-sm md:px-5 px-0">
                 <h2 class="text-lg font-semibold mb-4">BERITA TERBARU</h2>
                 <div class="space-y-4">
-                    <div class="flex space-x-4 border-b border-dashed">
-                        <img src="{{ url('/') }}/images/banner/bg.jpg" alt="Info 1"
-                            class="w-18 h-18 rounded-lg" />
-                        <div>
-                            <a href="{{ url('/') }}/berita/1"
-                                class="hover:text-white text-yellow-400 font-semibold">PENILAIAN AKHIR
-                                SEMESTER...</a>
-                            <p class="text-white text-sm py-2">15 Nov, 2024</p>
-                            <p class="text-white text-justify pr-2 pb-4">
-                                Yth. Bapak/ Ibu Orang tua/ Wali Siswa Kelas X, XI dan XII SMAN...
-                            </p>
+                    @foreach ($beritas as $berita)
+                        <div class="flex space-x-4 border-b border-dashed">
+                            <img src="{{ asset('storage/banner/' . $berita['image']) }}" alt="Info 1"
+                                class="w-18 h-18 rounded-lg" />
+                            <div>
+                                <a href="{{ url('/') }}/berita/{{ $berita['id_berita'] }}"
+                                    class="hover:text-white text-yellow-400 font-semibold">{{ Str::limit($berita['judul'], 20, '...') }}</a>
+                                <p class="text-white text-sm py-2">{{ $berita['tanggal'] }}</p>
+                                <p class="text-white text-justify pr-2 pb-4">
+                                    {{ Str::limit($berita['isi'], 50, '...') }}
+                                </p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="flex space-x-4 border-b border-dashed">
-                        <img src="{{ url('/') }}/images/banner/bg.jpg" alt="Info 1"
-                            class="w-18 h-18 rounded-lg" />
-                        <div>
-                            <a href="{{ url('/') }}/berita/1"
-                                class="hover:text-white text-yellow-400 font-semibold">PENILAIAN AKHIR
-                                SEMESTER...</a>
-                            <p class="text-white text-sm py-2">15 Nov, 2024</p>
-                            <p class="text-white text-justify pr-2 pb-4">
-                                Yth. Bapak/ Ibu Orang tua/ Wali Siswa Kelas X, XI dan XII SMAN...
-                            </p>
-                        </div>
-                    </div>
+                    @endforeach
+
+
                     <a href="{{ url('/') }}/berita"
                         class=" text-white font-bold text-md cursor-pointer hover:underline">
                         READ MORE »

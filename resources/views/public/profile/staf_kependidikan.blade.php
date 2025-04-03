@@ -9,7 +9,8 @@
 
 
         <div class="my-5 border-b border-gray-300 pb-10">
-            <img src="{{ url('/') }}/images/banner/bg.jpg" alt="" class="w-full">
+            <img src="{{ asset('storage/profile/staf/kependidikan/banner/' . $profile['foto_kependidikan']) }}"
+                alt="{{ $profile['foto_kependidikan'] }}" class="w-full">
         </div>
         <div class="text-gray-700">
             <div class="text-center mb-10">
@@ -20,70 +21,17 @@
                 </div>
             </div>
             <div class="my-5 flex justify-around flex-wrap">
-                <div class="my-3  w-50 h-76 bg-white rounded-xl shadow-md overflow-hidden">
-                    <img src="{{ url('/') }}/images/banner/bg.jpg" alt=""
-                        class="w-full h-48 object-cover" />
-                    <div class="p-4 text-center">
-                        <h2 class="text-sm font-bold text-gray-900">Nama Guruasndasbdn sadasd sadsa</h2>
-                        <p class="text-yellow-500 text-sm font-semibold">Mata Pelajaraas dbgasgdhasgdjhjhdg
+                @foreach ($kependidikans as $kependidikan)
+                    <div class="my-3  w-50 h-76 bg-white rounded-xl shadow-md overflow-hidden">
+                        <img src="{{ asset('storage/profile/staf/kependidikan/' . $kependidikan['foto']) }}"
+                            alt="{{ $kependidikan['foto'] }}" class="w-full h-48 object-cover" />
+                        <div class="p-4 text-center">
+                            <h2 class="text-sm font-bold text-gray-900">{{ $kependidikan['nama'] }}</h2>
+                            <p class="text-yellow-500 text-sm font-semibold">{{ $kependidikan['status'] }}
+                        </div>
                     </div>
-                </div>
-                <div class="my-3  w-50 h-76 bg-white rounded-xl shadow-md overflow-hidden">
-                    <img src="{{ url('/') }}/images/banner/bg.jpg" alt=""
-                        class="w-full h-48 object-cover" />
-                    <div class="p-4 text-center">
-                        <h2 class="text-sm font-bold text-gray-900">Nama Guruasndasbdn sadasd sadsa</h2>
-                        <p class="text-yellow-500 text-sm font-semibold">Mata Pelajaraas dbgasgdhasgdjhjhdg
-                    </div>
-                </div>
-                <div class="my-3  w-50 h-76 bg-white rounded-xl shadow-md overflow-hidden">
-                    <img src="{{ url('/') }}/images/banner/bg.jpg" alt=""
-                        class="w-full h-48 object-cover" />
-                    <div class="p-4 text-center">
-                        <h2 class="text-sm font-bold text-gray-900">Nama Guruasndasbdn sadasd sadsa</h2>
-                        <p class="text-yellow-500 text-sm font-semibold">Mata Pelajaraas dbgasgdhasgdjhjhdg
-                    </div>
-                </div>
-                <div class="my-3  w-50 h-76 bg-white rounded-xl shadow-md overflow-hidden">
-                    <img src="{{ url('/') }}/images/banner/bg.jpg" alt=""
-                        class="w-full h-48 object-cover" />
-                    <div class="p-4 text-center">
-                        <h2 class="text-sm font-bold text-gray-900">Nama Guruasndasbdn sadasd sadsa</h2>
-                        <p class="text-yellow-500 text-sm font-semibold">Mata Pelajaraas dbgasgdhasgdjhjhdg
-                    </div>
-                </div>
-                <div class="my-3  w-50 h-76 bg-white rounded-xl shadow-md overflow-hidden">
-                    <img src="{{ url('/') }}/images/banner/bg.jpg" alt=""
-                        class="w-full h-48 object-cover" />
-                    <div class="p-4 text-center">
-                        <h2 class="text-sm font-bold text-gray-900">Nama Guruasndasbdn sadasd sadsa</h2>
-                        <p class="text-yellow-500 text-sm font-semibold">Mata Pelajaraas dbgasgdhasgdjhjhdg
-                    </div>
-                </div>
-                <div class="my-3  w-50 h-76 bg-white rounded-xl shadow-md overflow-hidden">
-                    <img src="{{ url('/') }}/images/banner/bg.jpg" alt=""
-                        class="w-full h-48 object-cover" />
-                    <div class="p-4 text-center">
-                        <h2 class="text-sm font-bold text-gray-900">Nama Guruasndasbdn sadasd sadsa</h2>
-                        <p class="text-yellow-500 text-sm font-semibold">Mata Pelajaraas dbgasgdhasgdjhjhdg
-                    </div>
-                </div>
-                <div class="my-3  w-50 h-76 bg-white rounded-xl shadow-md overflow-hidden">
-                    <img src="{{ url('/') }}/images/banner/bg.jpg" alt=""
-                        class="w-full h-48 object-cover" />
-                    <div class="p-4 text-center">
-                        <h2 class="text-sm font-bold text-gray-900">Nama Guruasndasbdn sadasd sadsa</h2>
-                        <p class="text-yellow-500 text-sm font-semibold">Mata Pelajaraas dbgasgdhasgdjhjhdg
-                    </div>
-                </div>
-                <div class="my-3  w-50 h-76 bg-white rounded-xl shadow-md overflow-hidden">
-                    <img src="{{ url('/') }}/images/banner/bg.jpg" alt=""
-                        class="w-full h-48 object-cover" />
-                    <div class="p-4 text-center">
-                        <h2 class="text-sm font-bold text-gray-900">Nama Guruasndasbdn sadasd sadsa</h2>
-                        <p class="text-yellow-500 text-sm font-semibold">Mata Pelajaraas dbgasgdhasgdjhjhdg
-                    </div>
-                </div>
+                @endforeach
+
 
             </div>
 

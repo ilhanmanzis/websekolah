@@ -2,6 +2,7 @@
 
 namespace App\View\Components;
 
+use App\Models\Profile;
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
@@ -21,6 +22,9 @@ class NavbarHome extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.navbar-home');
+        $data = [
+            "profile"   => Profile::find('1')
+        ];
+        return view('components.navbar-home', $data);
     }
 }

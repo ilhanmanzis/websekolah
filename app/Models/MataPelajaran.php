@@ -2,11 +2,13 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class MataPelajaran extends Model
 {
+    use HasFactory;
     protected $table = 'mata_pelajaran';
     protected $primaryKey = 'id_mata_pelajaran';
     protected $fillable = ["nama_mata_pelajaran"];

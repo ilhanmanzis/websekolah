@@ -6,18 +6,18 @@
         <x-sub-url>
             <x-slot:title>{{ $title }}</x-slot:title>
             <x-slot:url>{{ $url }}</x-slot:url>
-            <x-slot:judul>PENILAIAN AKHIR SEMESTER GANJIL T.P. 2024/2025</x-slot:judul>
+            <x-slot:judul>{{ $sekolah['judul'] }}</x-slot:judul>
         </x-sub-url>
 
 
         <div class="my-5 border-b border-gray-300 pb-10">
-            <img src="{{ url('/') }}/images/banner/bg.jpg" alt="" class="w-full">
-            <h2 class="text-blue-950 text-2xl font-bold mt-10">PENILAIAN AKHIR SEMESTER GANJIL T.P. 2024/2025</h2>
+            <img src="{{ asset('storage/info/' . $sekolah['image']) }}" alt="" class="w-full">
+            <h2 class="text-blue-950 text-2xl font-bold mt-10">{{ $sekolah['judul'] }}</h2>
         </div>
         <div class="text-gray-700">
 
-            <div class="my-5">
-                asdhjasfdhashjdgaisdgashgdjhgj
+            <div class="my-5 text-justify">
+                {!! $sekolah['isi'] !!}
             </div>
         </div>
 

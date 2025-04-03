@@ -9,7 +9,8 @@
 
 
         <div class="my-5 border-t border-gray-300 pt-5">
-            <img src="{{ url('/') }}/images/banner/bg.jpg" alt="" class="w-full">
+            <img src="{{ asset('storage/profile/struktur/komite/' . $profile['organisasi_komite']) }}"
+                alt="{{ $profile['organisasi_komite'] }}" class="w-full">
         </div>
 
     </div>

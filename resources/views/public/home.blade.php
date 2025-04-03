@@ -10,31 +10,12 @@
         <div id="gallery" class="relative w-full max-w-76 mb-10" data-carousel="slide">
             <!-- Carousel wrapper -->
             <div class="relative overflow-hidden aspect-[9/16]">
-                <!-- Item 1 -->
-                <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                    <img src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg"
-                        class="absolute inset-0 w-full h-full object-cover" alt="">
-                </div>
-                <!-- Item 2 -->
-                <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
-                    <img src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg"
-                        class="absolute inset-0 w-full h-full object-cover" alt="">
-                </div>
-                <!-- Item 3 -->
-                <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                    <img src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg"
-                        class="absolute inset-0 w-full h-full object-cover" alt="">
-                </div>
-                <!-- Item 4 -->
-                <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                    <img src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg"
-                        class="absolute inset-0 w-full h-full object-cover" alt="">
-                </div>
-                <!-- Item 5 -->
-                <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                    <img src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-5.jpg"
-                        class="absolute inset-0 w-full h-full object-cover" alt="">
-                </div>
+                @foreach ($posters as $poster)
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                        <img src="{{ asset('storage/poster/' . $poster['image']) }}"
+                            class="absolute inset-0 w-full h-full object-cover" alt="{{ $poster['image'] }}">
+                    </div>
+                @endforeach
             </div>
 
             <!-- Slider controls -->
@@ -79,49 +60,21 @@
 
             <!-- List Item -->
             <div class="divide-y divide-gray-200 px-4">
-                <!-- Item 1 -->
-                <div class="flex items-start space-x-3  pt-5 pb-4 hover:bg-gray-100  ">
-                    <img src="{{ url('/') }}/images/logo/logo.png" alt="Gambar Pengumuman"
-                        class="w-16 h-16 object-cover rounded-md">
-                    <div>
-                        <a href="{{ url('/') }}/info/1"
-                            class="text-sm pt-3 font-semibold text-gray-800 hover:text-yellow-500">
-                            PENILAIAN AKHIR SEMESTER GANJIL T.P. 2024/2025
-                        </a>
+                @foreach ($infos as $info)
+                    <div class="flex items-start space-x-3  pt-5 pb-4 hover:bg-gray-100  ">
+                        <img src="{{ asset('storage/info/' . $info['image']) }}" alt="{{ $info['image'] }}"
+                            class="w-16 h-16 object-cover rounded-md">
+                        <div>
+                            <a href="{{ url('/') }}/info/{{ $info['image'] }}"
+                                class="text-sm pt-3 font-semibold text-gray-800 hover:text-yellow-500">
+                                {{ Str::limit($info['judul'], 35, '...') }}
+                            </a>
+                        </div>
                     </div>
-                </div>
+                @endforeach
 
-                <!-- Item 2 -->
-                <div class="flex items-start space-x-3  pt-5 pb-4 hover:bg-gray-100  ">
-                    <img src="{{ url('/') }}/images/logo/logo.png" alt="Gambar Pengumuman"
-                        class="w-16 h-16 object-cover rounded-md">
-                    <div>
-                        <a href="{{ url('/') }}/info/1"
-                            class="text-sm pt-3 font-semibold text-gray-800 hover:text-yellow-500">
-                            PENILAIAN AKHIR SEMESTER GANJIL T.P. 2024/2025
-                        </a>
-                    </div>
-                </div>
-                <div class="flex items-start space-x-3  pt-5 pb-4 hover:bg-gray-100  ">
-                    <img src="{{ url('/') }}/images/logo/logo.png" alt="Gambar Pengumuman"
-                        class="w-16 h-16 object-cover rounded-md">
-                    <div>
-                        <a href="{{ url('/') }}/info/1"
-                            class="text-sm pt-3 font-semibold text-gray-800 hover:text-yellow-500">
-                            PENILAIAN AKHIR SEMESTER GANJIL T.P. 2024/2025
-                        </a>
-                    </div>
-                </div>
-                <div class="flex items-start space-x-3  pt-5 pb-4 hover:bg-gray-100  ">
-                    <img src="{{ url('/') }}/images/logo/logo.png" alt="Gambar Pengumuman"
-                        class="w-16 h-16 object-cover rounded-md">
-                    <div>
-                        <a href="{{ url('/') }}/info/1"
-                            class="text-sm pt-3 font-semibold text-gray-800 hover:text-yellow-500">
-                            PENILAIAN AKHIR SEMESTER GANJIL T.P. 2024/2025
-                        </a>
-                    </div>
-                </div>
+
+
 
 
             </div>
@@ -142,28 +95,17 @@
             <h2 class="text-xl font-bold text-gray-800 mb-4">Sambutan Kepala Sekolah</h2>
 
             <!-- Foto Kepala Sekolah -->
-            <img src="{{ url('/') }}/images/struktur/kepala.jpg" alt="Sambutan Kepala Sekolah"
+            <img src="{{ asset('storage/profile/sambutan/' . $sambutan['image']) }}" alt="Sambutan Kepala Sekolah"
                 class="w-52 object-cover rounded-md shadow-md border border-gray-300 float-left mr-4 mb-4">
 
             <!-- Konten Sambutan -->
             <div class="text-gray-800 leading-relaxed text-justify">
-                <p>Bismillahirrohmanirrohim</p>
-                <p>Assalamu’alaikum Wr. Wb.</p>
-                <p>
-                    Segala puji hanya untuk Allah SWT dan shalawat serta salam semoga tercurah atas nabi yang terakhir,
-                    yaitu nabi kita Muhammad SAW, begitu pula atas keluarga, para sahabat dan para pengikutnya.
-
-                    Alhamdulillahi robbil alamin kami panjatkan kehadlirat Tuhan Allah SWT, bahwasannya dengan rahmat
-                    dan karunia-Nya lah akhirnya Website sekolah ini dengan domain www.sman1yogya.sch.id dapat kami
-                    perbaharui dan kembangkan. Kami mengucapkan selamat datang di Website kami SMAN Negeri 1 Teladan
-                    Yogyakarta. Dalam perkembangan era globalisasi dan pesatnya kemajuan teknologi dan informasi… <a
-                        href="{{ '/' }}/sambutan"
-                        class="inline-block text-blue-700 font-semibold hover:underline">
-                        Read More »
-                    </a>
-                </p>
+                {!! Str::limit($sambutan['isi'], 1000, '...') !!}
                 <!-- Read More -->
-
+                <a href="{{ '/' }}/sambutan"
+                    class="inline-block text-blue-700 font-semibold hover:underline">
+                    Read More »
+                </a>
             </div>
 
             <!-- Menghindari teks di bawah gambar terpotong -->
@@ -186,105 +128,43 @@
             </div>
         </div>
         <div class="flex justify-between mx-10 md:mx-10 lg:mx-20 my-20 flex-wrap">
+            @foreach ($beritas as $berita)
+                <?php $parts = explode(' ', $berita['tanggal']);
+                $tanggal = $parts[0];
+                $bulan = substr($parts[1], 0, 3);
+                $tahun = $parts[2]; ?>
+                <div
+                    class="max-w-sm w-86 sm:mx-0  mb-5 md:mx-5 bg-white border border-gray-200 rounded-lg shadow-sm  relative overflow-hidden">
+                    <div>
+                        <img class="rounded-t-lg w-full" src="{{ asset('storage/berita/' . $berita['image']) }}"
+                            alt="$berita['image']" />
+                        <!-- Tanggal di atas gambar -->
+                        <div
+                            class="absolute top-48 md:top-52 left-3 bg-blue-950 bg-opacity-80 text-center px-3 py-2 rounded-md">
+                            <span class="block text-3xl font-bold text-yellow-400">{{ $tanggal }}</span>
+                            <span class="block text-sm text-white">{{ $bulan }}, {{ $tahun }}</span>
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <a href="{{ url('/') }}/berita/{{ $berita['id_berita'] }}">
+                            <h5 class="mb-2 text-xl font-bold tracking-tight text-blue-950  hover:text-yellow-500">
+                                {{ Str::limit($berita['judul'], 60, '...') }}</h5>
+                        </a>
+                        <p class="my-6 font-normal text-sm text-gray-700 text-justify">
+                            {{ Str::limit($berita['isi'], 120, '...') }}
+                        </p>
+                        <a href="{{ url('/') }}/berita/{{ $berita['id_berita'] }}"
+                            class="my-3 font-bold text-blue-950 flex items-center gap-1 hover:underline">Read More
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke-width="1.5" stroke="currentColor" class="size-4">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="m5.25 4.5 7.5 7.5-7.5 7.5m6-15 7.5 7.5-7.5 7.5" />
+                            </svg>
+                        </a>
 
-
-            <div
-                class="max-w-sm w-86 sm:mx-0  mb-5 md:mx-5 bg-white border border-gray-200 rounded-lg shadow-sm  relative overflow-hidden">
-                <div>
-                    <img class="rounded-t-lg w-full" src="{{ url('/') }}/images/banner.jpg" alt="" />
-                    <!-- Tanggal di atas gambar -->
-                    <div
-                        class="absolute top-40 md:top-42 left-3 bg-blue-950 bg-opacity-80 text-center px-3 py-2 rounded-md">
-                        <span class="block text-3xl font-bold text-yellow-400">21</span>
-                        <span class="block text-sm text-white">Feb, 2025</span>
                     </div>
                 </div>
-                <div class="p-5">
-                    <a href="{{ url('/') }}/berita/1">
-                        <h5 class="mb-2 text-xl font-bold tracking-tight text-blue-950  hover:text-yellow-500">
-                            GAUNGKAN 7
-                            KEBIASAAN ANAK INDONESIA HEBAT, SMAN 1 YOGYAKARTA…</h5>
-                    </a>
-                    <p class="my-6 font-normal text-sm text-gray-700 ">
-                        Jumat 21 Februari 2025 Siswa kelas X dan XI mengikuti kegiatan olahraga senam pagi di Lapangan
-                        Voli…
-                    </p>
-                    <a href="{{ url('/') }}/berita/1"
-                        class="my-3 font-bold text-blue-950 flex items-center gap-1 hover:underline">Read More
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                            stroke-width="1.5" stroke="currentColor" class="size-4">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="m5.25 4.5 7.5 7.5-7.5 7.5m6-15 7.5 7.5-7.5 7.5" />
-                        </svg>
-                    </a>
-
-                </div>
-            </div>
-            <div
-                class="max-w-sm w-86 sm:mx-0  mb-5 md:mx-5 bg-white border border-gray-200 rounded-lg shadow-sm   relative overflow-hidden">
-                <div>
-                    <img class="rounded-t-lg w-full" src="{{ url('/') }}/images/banner.jpg" alt="" />
-                    <!-- Tanggal di atas gambar -->
-                    <div
-                        class="absolute top-40 md:top-42 left-3 bg-blue-950 bg-opacity-80 text-center px-3 py-2 rounded-md">
-                        <span class="block text-3xl font-bold text-yellow-400">21</span>
-                        <span class="block text-sm text-white">Feb, 2025</span>
-                    </div>
-                </div>
-                <div class="p-5">
-                    <a href="{{ url('/') }}/berita/1">
-                        <h5 class="mb-2 text-xl font-bold tracking-tight text-blue-950  hover:text-yellow-500">
-                            GAUNGKAN 7
-                            KEBIASAAN ANAK INDONESIA HEBAT, SMAN 1 YOGYAKARTA…</h5>
-                    </a>
-                    <p class="my-6 font-normal text-sm text-gray-700 ">
-                        Jumat 21 Februari 2025 Siswa kelas X dan XI mengikuti kegiatan olahraga senam pagi di Lapangan
-                        Voli…
-                    </p>
-                    <a href="{{ url('/') }}/berita/1"
-                        class="my-3 font-bold text-blue-950 flex items-center gap-1 hover:underline">Read More
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                            stroke-width="1.5" stroke="currentColor" class="size-4">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="m5.25 4.5 7.5 7.5-7.5 7.5m6-15 7.5 7.5-7.5 7.5" />
-                        </svg>
-                    </a>
-
-                </div>
-            </div>
-            <div
-                class="max-w-sm w-86 sm:mx-0  mb-5 md:mx-5 bg-white border border-gray-200 rounded-lg shadow-sm   relative overflow-hidden">
-                <div>
-                    <img class="rounded-t-lg w-full" src="{{ url('/') }}/images/banner.jpg" alt="" />
-                    <!-- Tanggal di atas gambar -->
-                    <div
-                        class="absolute top-40 md:top-42 left-3 bg-blue-950 bg-opacity-80 text-center px-3 py-2 rounded-md">
-                        <span class="block text-3xl font-bold text-yellow-400">21</span>
-                        <span class="block text-sm text-white">Feb, 2025</span>
-                    </div>
-                </div>
-                <div class="p-5">
-                    <a href="{{ url('/') }}/berita/1">
-                        <h5 class="mb-2 text-xl font-bold tracking-tight text-blue-950  hover:text-yellow-500">
-                            GAUNGKAN 7
-                            KEBIASAAN ANAK INDONESIA HEBAT, SMAN 1 YOGYAKARTA…</h5>
-                    </a>
-                    <p class="my-6 font-normal text-sm text-gray-700 ">
-                        Jumat 21 Februari 2025 Siswa kelas X dan XI mengikuti kegiatan olahraga senam pagi di Lapangan
-                        Voli…
-                    </p>
-                    <a href="{{ url('/') }}/berita/1"
-                        class="my-3 font-bold text-blue-950 flex items-center gap-1 hover:underline">Read More
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                            stroke-width="1.5" stroke="currentColor" class="size-4">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="m5.25 4.5 7.5 7.5-7.5 7.5m6-15 7.5 7.5-7.5 7.5" />
-                        </svg>
-                    </a>
-
-                </div>
-            </div>
-
+            @endforeach
 
             <div class="flex justify-center w-full pt-5">
                 <a href="{{ url('/') }}/berita"
@@ -308,129 +188,77 @@
             </div>
         </div>
         <div class="lg:mx-40 md:mx-20 mx-5 py-10">
+            @foreach ($prestasis as $prestasi)
+                <div class="flex justify-start bg-white shadow-lg rounded-lg overflow-hidden flex-wrap my-10">
+                    <!-- Bagian Gambar -->
+                    <img src="{{ asset('storage/prestasi/' . $prestasi['image']) }}" alt="{{ $prestasi['image'] }}"
+                        class="w-full md:w-1/2 h-72 object-cover">
 
-            <div class="flex justify-start bg-white shadow-lg rounded-lg overflow-hidden flex-wrap my-10">
-                <!-- Bagian Gambar -->
-                <img src="{{ url('/') }}/images/banner/bg.jpg" alt="Pemenang Lomba"
-                    class="w-full md:w-1/2 h-72 object-cover">
+                    <!-- Bagian Konten -->
+                    <div class="w-full px-5 py-4 md:w-1/2">
+                        <!-- Judul -->
+                        <a href="{{ url('/') }}/prestasi/{{ $prestasi['id_prestasi'] }}"
+                            class="text-xl font-bold text-blue-950 hover:text-yellow-500">
+                            {{ Str::limit($prestasi['judul'], 35, '...') }}
+                        </a>
 
-                <!-- Bagian Konten -->
-                <div class="w-full px-5 py-4 md:w-1/2">
-                    <!-- Judul -->
-                    <a href="{{ url('/') }}/prestasi/1"
-                        class="text-xl font-bold text-blue-950 hover:text-yellow-500">
-                        JUARA UMUM LKTI NASIONAL MIPA UNY
-                    </a>
+                        <!-- Tanggal -->
+                        <div class="flex items-center text-gray-500 text-sm my-2 border-b border-gray-400 pb-5 pt-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke-width="1.5" stroke="currentColor" class="size-5 mr-1">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M6.75 2.994v2.25m10.5-2.25v2.25m-14.252 13.5V7.491a2.25 2.25 0 0 1 2.25-2.25h13.5a2.25 2.25 0 0 1 2.25 2.25v11.251m-18 0a2.25 2.25 0 0 0 2.25 2.25h13.5a2.25 2.25 0 0 0 2.25-2.25m-18 0v-7.5a2.25 2.25 0 0 1 2.25-2.25h13.5a2.25 2.25 0 0 1 2.25 2.25v7.5m-6.75-6h2.25m-9 2.25h4.5m.002-2.25h.005v.006H12v-.006Zm-.001 4.5h.006v.006h-.006v-.005Zm-2.25.001h.005v.006H9.75v-.006Zm-2.25 0h.005v.005h-.006v-.005Zm6.75-2.247h.005v.005h-.005v-.005Zm0 2.247h.006v.006h-.006v-.006Zm2.25-2.248h.006V15H16.5v-.005Z" />
+                            </svg>
 
-                    <!-- Tanggal -->
-                    <div class="flex items-center text-gray-500 text-sm my-2 border-b border-gray-400 pb-5 pt-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                            stroke-width="1.5" stroke="currentColor" class="size-5 mr-1">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M6.75 2.994v2.25m10.5-2.25v2.25m-14.252 13.5V7.491a2.25 2.25 0 0 1 2.25-2.25h13.5a2.25 2.25 0 0 1 2.25 2.25v11.251m-18 0a2.25 2.25 0 0 0 2.25 2.25h13.5a2.25 2.25 0 0 0 2.25-2.25m-18 0v-7.5a2.25 2.25 0 0 1 2.25-2.25h13.5a2.25 2.25 0 0 1 2.25 2.25v7.5m-6.75-6h2.25m-9 2.25h4.5m.002-2.25h.005v.006H12v-.006Zm-.001 4.5h.006v.006h-.006v-.005Zm-2.25.001h.005v.006H9.75v-.006Zm-2.25 0h.005v.005h-.006v-.005Zm6.75-2.247h.005v.005h-.005v-.005Zm0 2.247h.006v.006h-.006v-.006Zm2.25-2.248h.006V15H16.5v-.005Z" />
-                        </svg>
+                            {{ $prestasi['tanggal'] }}
+                        </div>
 
-                        17 Feb, 2025
-                    </div>
+                        <!-- Skala -->
+                        <p class="pt-5 text-gray-700 text-md font-semibold mb-2">
+                            Skala {{ $prestasi['skala'] }}
+                        </p>
+                        <div class="flex justify-start py-2 text-gray-700">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M16.5 18.75h-9m9 0a3 3 0 0 1 3 3h-15a3 3 0 0 1 3-3m9 0v-3.375c0-.621-.503-1.125-1.125-1.125h-.871M7.5 18.75v-3.375c0-.621.504-1.125 1.125-1.125h.872m5.007 0H9.497m5.007 0a7.454 7.454 0 0 1-.982-3.172M9.497 14.25a7.454 7.454 0 0 0 .981-3.172M5.25 4.236c-.982.143-1.954.317-2.916.52A6.003 6.003 0 0 0 7.73 9.728M5.25 4.236V4.5c0 2.108.966 3.99 2.48 5.228M5.25 4.236V2.721C7.456 2.41 9.71 2.25 12 2.25c2.291 0 4.545.16 6.75.47v1.516M7.73 9.728a6.726 6.726 0 0 0 2.748 1.35m8.272-6.842V4.5c0 2.108-.966 3.99-2.48 5.228m2.48-5.492a46.32 46.32 0 0 1 2.916.52 6.003 6.003 0 0 1-5.395 4.972m0 0a6.726 6.726 0 0 1-2.749 1.35m0 0a6.772 6.772 0 0 1-3.044 0" />
+                            </svg>
+                            <span class="pl-2">:</span>
+                            <span class="pl-2">{{ $prestasi['juara'] }}</span>
+                        </div>
 
-                    <!-- Skala -->
-                    <p class="pt-5 text-gray-700 text-md font-semibold mb-2">
-                        Skala Nasional
-                    </p>
-                    <div class="flex justify-start py-2 text-gray-700">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                            stroke-width="1.5" stroke="currentColor" class="size-6">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M16.5 18.75h-9m9 0a3 3 0 0 1 3 3h-15a3 3 0 0 1 3-3m9 0v-3.375c0-.621-.503-1.125-1.125-1.125h-.871M7.5 18.75v-3.375c0-.621.504-1.125 1.125-1.125h.872m5.007 0H9.497m5.007 0a7.454 7.454 0 0 1-.982-3.172M9.497 14.25a7.454 7.454 0 0 0 .981-3.172M5.25 4.236c-.982.143-1.954.317-2.916.52A6.003 6.003 0 0 0 7.73 9.728M5.25 4.236V4.5c0 2.108.966 3.99 2.48 5.228M5.25 4.236V2.721C7.456 2.41 9.71 2.25 12 2.25c2.291 0 4.545.16 6.75.47v1.516M7.73 9.728a6.726 6.726 0 0 0 2.748 1.35m8.272-6.842V4.5c0 2.108-.966 3.99-2.48 5.228m2.48-5.492a46.32 46.32 0 0 1 2.916.52 6.003 6.003 0 0 1-5.395 4.972m0 0a6.726 6.726 0 0 1-2.749 1.35m0 0a6.772 6.772 0 0 1-3.044 0" />
-                        </svg>
-                        <span class="pl-2">:</span>
-                        <span class="pl-2">Juara 1</span>
-                    </div>
+                        <!-- Tim -->
+                        <div class="flex justify-start text-gray-600 text-sm text-justify">
+                            <svg fill="currentColor" version="1.1" id="Capa_1" class="size-6"
+                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                viewBox="0 0 488.2 488.2" xml:space="preserve">
+                                <g>
+                                    <g>
+                                        <path
+                                            d="M480.7,327.7c-25.5-21-53-34.9-58.6-37.6c-0.6-0.3-1-0.9-1-1.7v-39.7c5-3.3,8.3-9,8.3-15.5V192
+                                            c0-20.5-16.6-37.1-37.1-37.1h-4.4h-4.4c-20.5,0-37.1,16.6-37.1,37.1v41.2c0,6.5,3.3,12.1,8.3,15.5v39.7c0,0.7-0.4,1.3-1,1.7
+                                            c-2.9,1.4-11.8,5.9-23.3,12.9c-21.9-15-41.1-24.7-46-27.1c-0.7-0.4-1.2-1.1-1.2-1.9v-46.8c5.9-3.9,9.7-10.6,9.7-18.2v-48.4
+                                            c0-24.1-19.5-43.6-43.6-43.6h-5.4h-5.2c-24.1,0-43.6,19.5-43.6,43.6V209c0,7.6,3.9,14.3,9.7,18.2v46.7c0,0.8-0.5,1.6-1.2,1.9
+                                            c-4.9,2.4-24.1,12.1-46,27.1c-11.5-6.9-20.4-11.4-23.3-12.9c-0.6-0.3-1-0.9-1-1.7v-39.7c5-3.3,8.3-9,8.3-15.5v-41.2
+                                            c0-20.5-16.6-37.1-37.1-37.1h-4.4h-4.4c-20.5,0-37.1,16.6-37.1,37.1v41.2c0,6.5,3.3,12.1,8.3,15.5v39.7c0,0.7-0.4,1.3-1,1.7
+                                            c-5.6,2.7-33.1,16.6-58.6,37.6C2.7,331.4,0,337.1,0,343v28.2h100.2h26.2h74h28.3l10.1-46.3c-20.4-28.5,1.5-29.8,5.3-29.9l0,0l0,0
+                                            c3.8,0,25.8,1.4,5.3,29.9l10.1,46.3h28.3h74H388h100.2V343C488,337.2,485.3,331.5,480.7,327.7z" />
+                                    </g>
+                                </g>
+                            </svg>
 
-                    <!-- Tim -->
-                    <div class="flex justify-start text-gray-600 text-sm text-justify">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                            class="lg:size-10 md:size-12 size-18">
-                            <path fill-rule="evenodd"
-                                d="M8.25 6.75a3.75 3.75 0 1 1 7.5 0 3.75 3.75 0 0 1-7.5 0ZM15.75 9.75a3 3 0 1 1 6 0 3 3 0 0 1-6 0ZM2.25 9.75a3 3 0 1 1 6 0 3 3 0 0 1-6 0ZM6.31 15.117A6.745 6.745 0 0 1 12 12a6.745 6.745 0 0 1 6.709 7.498.75.75 0 0 1-.372.568A12.696 12.696 0 0 1 12 21.75c-2.305 0-4.47-.612-6.337-1.684a.75.75 0 0 1-.372-.568 6.787 6.787 0 0 1 1.019-4.38Z"
-                                clip-rule="evenodd" />
-                            <path
-                                d="M5.082 14.254a8.287 8.287 0 0 0-1.308 5.135 9.687 9.687 0 0 1-1.764-.44l-.115-.04a.563.563 0 0 1-.373-.487l-.01-.121a3.75 3.75 0 0 1 3.57-4.047ZM20.226 19.389a8.287 8.287 0 0 0-1.308-5.135 3.75 3.75 0 0 1 3.57 4.047l-.01.121a.563.563 0 0 1-.373.486l-.115.04c-.567.2-1.156.349-1.764.441Z" />
-                        </svg>
+                            <span class="pl-2">:</span>
+                            <span class="pl-2">
 
-                        <span class="lg:pt-2 md:pt-3 pt-6 pl-2">:</span>
-                        <span class="lg:pt-2 md:pt-3 pt-6 pl-2">
+                                {{ $prestasi['anggota'] }}
+                            </span>
 
-                            Al Farabi Obiansyah XII MIPA 2, Muhammad Fakhri Ghonim Setyanda XII MIPA 3,
-                            Katon
-                            Dian
-                            Candra XI F, Naura Junata XI F
-                        </span>
-
-                    </div>
-                </div>
-            </div>
-            <div class="flex justify-start bg-white shadow-lg rounded-lg overflow-hidden flex-wrap my-10">
-                <!-- Bagian Gambar -->
-                <img src="{{ url('/') }}/images/banner/bg.jpg" alt="Pemenang Lomba"
-                    class="w-full md:w-1/2 h-72 object-cover">
-
-                <!-- Bagian Konten -->
-                <div class="w-full px-5 py-4 md:w-1/2">
-                    <!-- Judul -->
-                    <a href="{{ url('/') }}/prestasi/1"
-                        class="text-xl font-bold text-blue-950 hover:text-yellow-500">
-                        JUARA UMUM LKTI NASIONAL MIPA UNY
-                    </a>
-
-                    <!-- Tanggal -->
-                    <div class="flex items-center text-gray-500 text-sm my-2 border-b border-gray-400 pb-5 pt-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                            stroke-width="1.5" stroke="currentColor" class="size-5 mr-1">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M6.75 2.994v2.25m10.5-2.25v2.25m-14.252 13.5V7.491a2.25 2.25 0 0 1 2.25-2.25h13.5a2.25 2.25 0 0 1 2.25 2.25v11.251m-18 0a2.25 2.25 0 0 0 2.25 2.25h13.5a2.25 2.25 0 0 0 2.25-2.25m-18 0v-7.5a2.25 2.25 0 0 1 2.25-2.25h13.5a2.25 2.25 0 0 1 2.25 2.25v7.5m-6.75-6h2.25m-9 2.25h4.5m.002-2.25h.005v.006H12v-.006Zm-.001 4.5h.006v.006h-.006v-.005Zm-2.25.001h.005v.006H9.75v-.006Zm-2.25 0h.005v.005h-.006v-.005Zm6.75-2.247h.005v.005h-.005v-.005Zm0 2.247h.006v.006h-.006v-.006Zm2.25-2.248h.006V15H16.5v-.005Z" />
-                        </svg>
-
-                        17 Feb, 2025
-                    </div>
-
-                    <!-- Skala -->
-                    <p class="pt-5 text-gray-700 text-md font-semibold mb-2">
-                        Skala Nasional
-                    </p>
-                    <div class="flex justify-start py-2 text-gray-700">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                            stroke-width="1.5" stroke="currentColor" class="size-6">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M16.5 18.75h-9m9 0a3 3 0 0 1 3 3h-15a3 3 0 0 1 3-3m9 0v-3.375c0-.621-.503-1.125-1.125-1.125h-.871M7.5 18.75v-3.375c0-.621.504-1.125 1.125-1.125h.872m5.007 0H9.497m5.007 0a7.454 7.454 0 0 1-.982-3.172M9.497 14.25a7.454 7.454 0 0 0 .981-3.172M5.25 4.236c-.982.143-1.954.317-2.916.52A6.003 6.003 0 0 0 7.73 9.728M5.25 4.236V4.5c0 2.108.966 3.99 2.48 5.228M5.25 4.236V2.721C7.456 2.41 9.71 2.25 12 2.25c2.291 0 4.545.16 6.75.47v1.516M7.73 9.728a6.726 6.726 0 0 0 2.748 1.35m8.272-6.842V4.5c0 2.108-.966 3.99-2.48 5.228m2.48-5.492a46.32 46.32 0 0 1 2.916.52 6.003 6.003 0 0 1-5.395 4.972m0 0a6.726 6.726 0 0 1-2.749 1.35m0 0a6.772 6.772 0 0 1-3.044 0" />
-                        </svg>
-                        <span class="pl-2">:</span>
-                        <span class="pl-2">Juara 1</span>
-                    </div>
-
-                    <!-- Tim -->
-                    <div class="flex justify-start text-gray-600 text-sm text-justify">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                            class="lg:size-10 md:size-12 size-18">
-                            <path fill-rule="evenodd"
-                                d="M8.25 6.75a3.75 3.75 0 1 1 7.5 0 3.75 3.75 0 0 1-7.5 0ZM15.75 9.75a3 3 0 1 1 6 0 3 3 0 0 1-6 0ZM2.25 9.75a3 3 0 1 1 6 0 3 3 0 0 1-6 0ZM6.31 15.117A6.745 6.745 0 0 1 12 12a6.745 6.745 0 0 1 6.709 7.498.75.75 0 0 1-.372.568A12.696 12.696 0 0 1 12 21.75c-2.305 0-4.47-.612-6.337-1.684a.75.75 0 0 1-.372-.568 6.787 6.787 0 0 1 1.019-4.38Z"
-                                clip-rule="evenodd" />
-                            <path
-                                d="M5.082 14.254a8.287 8.287 0 0 0-1.308 5.135 9.687 9.687 0 0 1-1.764-.44l-.115-.04a.563.563 0 0 1-.373-.487l-.01-.121a3.75 3.75 0 0 1 3.57-4.047ZM20.226 19.389a8.287 8.287 0 0 0-1.308-5.135 3.75 3.75 0 0 1 3.57 4.047l-.01.121a.563.563 0 0 1-.373.486l-.115.04c-.567.2-1.156.349-1.764.441Z" />
-                        </svg>
-
-                        <span class="lg:pt-2 md:pt-3 pt-6 pl-2">:</span>
-                        <span class="lg:pt-2 md:pt-3 pt-6 pl-2">
-
-                            Al Farabi Obiansyah XII MIPA 2, Muhammad Fakhri Ghonim Setyanda XII MIPA 3,
-                            Katon
-                            Dian
-                            Candra XI F, Naura Junata XI F
-                        </span>
-
+                        </div>
                     </div>
                 </div>
-            </div>
+            @endforeach
+
+
 
 
 
@@ -455,35 +283,13 @@
             </div>
         </div>
         <div class="flex flex-wrap justify-start md:mx-20 mx-10">
-            <div class="flex justify-start px-5 bg-white rounded-md py-6 items-center md:w-70 w-full mx-2 my-2">
-                <img src="{{ url('/') }}/images/logo/logo.png" alt="" class="size-20">
-                <span class="text-gray-800 text-4xl">Pramuka</span>
-            </div>
-            <div class="flex justify-start px-5 bg-white rounded-md py-6 items-center md:w-70 w-full mx-2 my-2">
-                <img src="{{ url('/') }}/images/logo/logo.png" alt="" class="size-20">
-                <span class="text-gray-800 text-4xl">Pramuka</span>
-            </div>
-            <div class="flex justify-start px-5 bg-white rounded-md py-6 items-center md:w-70 w-full mx-2 my-2">
-                <img src="{{ url('/') }}/images/logo/logo.png" alt="" class="size-20">
-                <span class="text-gray-800 text-4xl">Pramuka</span>
-            </div>
-            <div class="flex justify-start px-5 bg-white rounded-md py-6 items-center md:w-70 w-full mx-2 my-2">
-                <img src="{{ url('/') }}/images/logo/logo.png" alt="" class="size-20">
-                <span class="text-gray-800 text-4xl">Pramuka</span>
-            </div>
-            <div class="flex justify-start px-5 bg-white rounded-md py-6 items-center md:w-70 w-full mx-2 my-2">
-                <img src="{{ url('/') }}/images/logo/logo.png" alt="" class="size-20">
-                <span class="text-gray-800 text-4xl">Pramuka</span>
-            </div>
-            <div class="flex justify-start px-5 bg-white rounded-md py-6 items-center md:w-70 w-full mx-2 my-2">
-                <img src="{{ url('/') }}/images/logo/logo.png" alt="" class="size-20">
-                <span class="text-gray-800 text-4xl">Pramuka</span>
-            </div>
-            <div class="flex justify-start px-5 bg-white rounded-md py-6 items-center md:w-70 w-full mx-2 my-2">
-                <img src="{{ url('/') }}/images/logo/logo.png" alt="" class="size-20">
-                <span class="text-gray-800 text-4xl">Pramuka</span>
-            </div>
-
+            @foreach ($ekstrakurikulers as $ekstrakurikuler)
+                <div class="flex justify-start px-5 bg-white rounded-md py-6 items-center md:w-70 w-full mx-2 my-2">
+                    <img src="{{ asset('storage/prestasi/' . $ekstrakurikuler['logo']) }}"
+                        alt="$ekstrakurikuler['logo']" class="size-20">
+                    <span class="text-gray-800 text-4xl">{{ $ekstrakurikuler['nama'] }}</span>
+                </div>
+            @endforeach
         </div>
     </div>
     {{-- end ekstrakurikuler --}}
@@ -515,8 +321,8 @@
                         <path
                             d="M22.5 6.908V6.75a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.158l9.714 5.978a1.5 1.5 0 0 0 1.572 0L22.5 6.908Z" />
                     </svg>
-                    <a href="mailto:admin@gmail.com"
-                        class="text-blue-950 font-semibold text-md pl-3">admin@gmail.com</a>
+                    <a href="mailto:{{ $kontak['email'] }}"
+                        class="text-blue-950 font-semibold text-md pl-3">{{ $kontak['email'] }}</a>
                 </div>
                 <div class="flex justify-start items-center mt-5">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
@@ -526,9 +332,7 @@
                             clip-rule="evenodd" />
                     </svg>
 
-                    <span class="text-blue-950 font-semibold text-md pl-3 text-justify">Jl. Bukit Suling 1, Jaya
-                        Tinggi, Kec. Kasui,
-                        Kabupaten Way Kanan, Lampung 34765</span>
+                    <span class="text-blue-950 font-semibold text-md pl-3 text-justify">{{ $kontak['alamat'] }}</span>
                 </div>
                 <div class="flex justify-start items-center mt-5">
                     <svg xmlns="http://www.w3.org/2000/svg" class="size-12 text-blue-950 " viewBox="0 0 90 90"
@@ -553,7 +357,7 @@
                     </svg>
 
 
-                    <span class="text-blue-950 font-semibold text-md pl-3 text-justify">0274 - 542604</span>
+                    <span class="text-blue-950 font-semibold text-md pl-3 text-justify">{{ $kontak['fax'] }}</span>
                 </div>
                 <div class="flex justify-start items-center mt-5">
                     <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" class="size-12 text-blue-950"
@@ -565,7 +369,8 @@
 
 
 
-                    <span class="text-blue-950 font-semibold text-md pl-3 text-justify">0274 - 542604</span>
+                    <span
+                        class="text-blue-950 font-semibold text-md pl-3 text-justify">{{ $kontak['no_telpon'] }}</span>
                 </div>
 
                 <div class="flex justify-start items-center mt-5">
@@ -592,8 +397,8 @@
                                     C276.546,215.678,222.799,268.994,156.734,268.994z" />
                         </g>
                     </svg>
-                    <a href="https://api.whatsapp.com/send?phone="
-                        class="text-blue-950 font-semibold text-md pl-3 text-justify">0274 - 542604</a>
+                    <a href="https://api.whatsapp.com/send?phone={{ $kontak['wa'] }}"
+                        class="text-blue-950 font-semibold text-md pl-3 text-justify">{{ $kontak['wa'] }}</a>
                 </div>
             </div>
 

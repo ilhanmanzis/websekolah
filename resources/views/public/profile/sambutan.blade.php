@@ -9,10 +9,11 @@
 
         {{-- start sambutan --}}
         <div class="my-5 border-b border-gray-300 pb-10">
-            <img src="{{ url('/') }}/images/banner/bg.jpg" alt="" class="w-full">
+            <img src="{{ asset('storage/profile/sambutan/' . $sambutan['image']) }}" alt="{{ $sambutan['image'] }}"
+                class="md:w-1/3 w-full mx-auto">
         </div>
         <div class="text-gray-700">
-            asdhjasfdhashjdgaisdgashgdjhgj
+            {!! $sambutan['isi'] !!}
         </div>
         {{-- end sambutan --}}
     </div>

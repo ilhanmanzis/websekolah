@@ -9,11 +9,12 @@
 
 
         <div class="my-5 border-b border-gray-300 pb-10">
-            <img src="{{ url('/') }}/images/banner/bg.jpg" alt="" class="w-full">
+            <img src="{{ asset('storage/profile/sejarah' . $sejarah['image']) }}" alt="{{ $sejarah['image'] }}"
+                class="w-full">
         </div>
         <div class="text-gray-700">
             <div class="text-center mb-10">
-                <h2 class="text-blue-950 text-4xl font-bold">SEJARAH SMA NEGERI 1 KASUI</h2>
+                <h2 class="text-blue-950 text-4xl font-bold">SEJARAH {{ $profile['nama_sekolah'] }}</h2>
                 <div class="flex justify-center mt-2 gap-2">
                     <div class="w-12 h-1 bg-yellow-400"></div>
                     <div class="w-12 h-1 bg-yellow-400"></div>
@@ -21,7 +22,7 @@
             </div>
 
             <p class="my-5">
-                asdhjasfdhashjdgaisdgashgdjhgj
+                {!! $sejarah['isi'] !!}
             </p>
         </div>
 

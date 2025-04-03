@@ -9,7 +9,8 @@
 
 
         <div class="my-5 border-b border-gray-300 pb-10">
-            <img src="{{ url('/') }}/images/banner/bg.jpg" alt="" class="w-full">
+            <img src="{{ asset('storage/layanan/laboratorium/' . $laboratorium['image']) }}"
+                alt="{{ $laboratorium['image'] }}" class="w-full">
         </div>
         <div class="text-gray-700">
             <div class="text-center mb-10">
@@ -20,7 +21,7 @@
                 </div>
             </div>
             <p class="my-5">
-                asdhjasfdhashjdgaisdgashgdjhgj
+                {!! $laboratorium['isi'] !!}
             </p>
         </div>
 

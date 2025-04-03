@@ -1,5 +1,5 @@
 <div class="hero min-h-screen overflow-hidden relative w-full h-full bg-cover bg-center"
-    style="background-image: url({{ url('/') }}/images/banner/bg.jpg);">
+    style="background-image: url({{ asset('storage/banner/bg.jpg') }});">
     <div class="absolute inset-0 bg-black opacity-60"></div>
     <div class="hero-content text-white text-center absolute inset-0 flex items-center justify-center"
         style="z-index: 2;">

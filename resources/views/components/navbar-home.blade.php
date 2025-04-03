@@ -5,10 +5,12 @@
         <div class="flex h-20 items-center justify-between">
             <div class="flex items-center">
                 <div class="shrink-0 flex items-center justify-between">
-                    <img class="size-20 pr-3 w-20" src="{{ url('/') }}/images/logo/logo.png" alt="Your Company">
+                    <img class="size-20 pr-3 w-20" src="{{ asset('storage/logo/' . $profile['logo']) }}"
+                        alt="Your Company">
                     <a href="{{ url('/') }}/" id="text-logo"
                         class="text-blue-950 {{ $page == 'Home' ? 'md:text-white' : '' }}  rounded-md px-3 py-2 text-sm lg:text-3xl font-bold "
-                        aria-current="page"><span style="text-transform: uppercase">SMA NEGERI 1 KASUI</span>
+                        aria-current="page"><span
+                            style="text-transform: uppercase">{{ $profile['nama_sekolah'] }}</span>
                         <p class="text-sm font-normal"></p>
                     </a>
                 </div>
@@ -25,7 +27,7 @@
 
                         {{-- start profile sekolah --}}
                         <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar"
-                            class="{{ $page == 'Home' ? 'text-white' : 'text-dark' }} font-medium  flex items-center justify-between w-full py-2 px-3 md:hover:bg-transparent md:border-0 hover:text-yellow-500 md:p-0 md:w-auto   focus:text-white  ">Profile
+                            class="{{ $page == 'Home' ? 'text-white' : 'text-dark' }} font-medium  flex items-center justify-between w-full py-2 px-3 md:hover:bg-transparent md:border-0 hover:text-yellow-500 md:p-0 md:w-auto  ">Profile
                             Sekolah
                             <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                 id="dropdownNavbarLink" fill="none" viewBox="0 0 10 6">
