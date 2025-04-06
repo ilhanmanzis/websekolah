@@ -9,17 +9,17 @@
 
 
         <div class="my-5 border-b border-gray-300 pb-10">
-            <img src="{{ asset('storage/profile/visimisi/' . $visiMisi['image']) }}" alt="" class="w-full">
+            <img src="{{ asset('storage/' . $visiMisi['image']) }}" alt="" class="w-full">
         </div>
         <div class="text-gray-700">
             <span class="text-blue-950 font-bold text-2xl">Visi</span>
-            <p class="my-5">
+            <div class="prose max-w-none my-5">
                 {!! $visiMisi['visi'] !!}
-            </p>
+            </div>
             <span class="text-blue-950 font-bold text-2xl">Misi</span>
-            <p class="my-5">
+            <div class="prose max-w-none my-5">
                 {!! $visiMisi['misi'] !!}
-            </p>
+            </div>
         </div>
 
     </div>

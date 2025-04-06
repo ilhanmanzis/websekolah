@@ -9,10 +9,10 @@
 
         {{-- start sambutan --}}
         <div class="my-5 border-b border-gray-300 pb-10">
-            <img src="{{ asset('storage/profile/sambutan/' . $sambutan['image']) }}" alt="{{ $sambutan['image'] }}"
+            <img src="{{ asset('storage/' . $sambutan['image']) }}" alt="{{ $sambutan['image'] }}"
                 class="md:w-1/3 w-full mx-auto">
         </div>
-        <div class="text-gray-700">
+        <div class="prose max-w-none text-justify w-full mx-auto text-gray-700">
             {!! $sambutan['isi'] !!}
         </div>
         {{-- end sambutan --}}

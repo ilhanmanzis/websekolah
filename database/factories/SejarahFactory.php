@@ -18,7 +18,7 @@ class SejarahFactory extends Factory
     {
         return [
             "isi"   => "asdhkashdk ashdknfkjsbkfjbsd kfgb  sdfjkgsd hj  fbvczxcjhs  dkfksjfbk jhsdvfbjhsd  jfhdsvajfhvsdajfhva",
-            "image" => "bg.jpg"
+            "image" => "profile/sejarah/bg.jpg"
         ];
     }
 }

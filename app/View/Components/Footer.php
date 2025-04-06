@@ -27,11 +27,11 @@ class Footer extends Component
     public function render(): View|Closure|string
     {
         $data = [
-            "profile"   => Profile::find('1'),
-            "sejarah"   => Sejarah::find('1'),
+            "profile"   => Profile::first(),
+            "sejarah"   => Sejarah::first(),
             "beritas"    => Berita::latest()->take(2)->get(),
             "infos"      => InfoSekolah::latest()->take(2)->get(),
-            "kontak"    => Kontak::find('1')
+            "kontak"    => Kontak::first()
         ];
         return view('components.footer', $data);
     }

@@ -17,7 +17,7 @@ class PosterFactory extends Factory
     public function definition(): array
     {
         return [
-            "image" => "bg.jpg"
+            "image" => "poster/bg.jpg"
         ];
     }
 }

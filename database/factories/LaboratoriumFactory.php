@@ -18,7 +18,7 @@ class LaboratoriumFactory extends Factory
     {
         return [
             "isi"   => "asdhkashdkashdka",
-            "image" => "bg.jpg"
+            "image" => "layanan/laboratorium/bg.jpg"
         ];
     }
 }

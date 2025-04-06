@@ -23,7 +23,7 @@ class NavbarHome extends Component
     public function render(): View|Closure|string
     {
         $data = [
-            "profile"   => Profile::find('1')
+            "profile"   => Profile::first()
         ];
         return view('components.navbar-home', $data);
     }

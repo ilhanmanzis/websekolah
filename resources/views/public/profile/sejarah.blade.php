@@ -9,8 +9,7 @@
 
 
         <div class="my-5 border-b border-gray-300 pb-10">
-            <img src="{{ asset('storage/profile/sejarah' . $sejarah['image']) }}" alt="{{ $sejarah['image'] }}"
-                class="w-full">
+            <img src="{{ asset('storage/' . $sejarah['image']) }}" alt="{{ $sejarah['image'] }}" class="w-full">
         </div>
         <div class="text-gray-700">
             <div class="text-center mb-10">
@@ -21,9 +20,9 @@
                 </div>
             </div>
 
-            <p class="my-5">
+            <div class="prose max-w-none text-justify my-5">
                 {!! $sejarah['isi'] !!}
-            </p>
+            </div>
         </div>
 
     </div>

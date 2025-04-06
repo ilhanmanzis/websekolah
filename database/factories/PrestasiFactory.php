@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -18,8 +19,8 @@ class PrestasiFactory extends Factory
     {
         return [
             "judul"     => "JUARA UMUM LKTI NASIONAL MIPA UNY",
-            "image"     => "bg.jpg",
-            "tanggal"   => "17-02-2025",
+            "image"     => "poster/bg.jpg",
+            "tanggal"       => Carbon::parse($this->faker->date())->translatedFormat('d F Y'),
             "skala"     => "Nasioal",
             "juara"     => "Juara 1",
             "anggota"   => "Ilhan Manzis, Janggar Fals",

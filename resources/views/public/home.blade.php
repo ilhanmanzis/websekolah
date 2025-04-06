@@ -12,7 +12,7 @@
             <div class="relative overflow-hidden aspect-[9/16]">
                 @foreach ($posters as $poster)
                     <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                        <img src="{{ asset('storage/poster/' . $poster['image']) }}"
+                        <img src="{{ asset('storage/' . $poster['image']) }}"
                             class="absolute inset-0 w-full h-full object-cover" alt="{{ $poster['image'] }}">
                     </div>
                 @endforeach
@@ -62,7 +62,7 @@
             <div class="divide-y divide-gray-200 px-4">
                 @foreach ($infos as $info)
                     <div class="flex items-start space-x-3  pt-5 pb-4 hover:bg-gray-100  ">
-                        <img src="{{ asset('storage/info/' . $info['image']) }}" alt="{{ $info['image'] }}"
+                        <img src="{{ asset('storage/' . $info['image']) }}" alt="{{ $info['image'] }}"
                             class="w-16 h-16 object-cover rounded-md">
                         <div>
                             <a href="{{ url('/') }}/info/{{ $info['image'] }}"
@@ -95,12 +95,13 @@
             <h2 class="text-xl font-bold text-gray-800 mb-4">Sambutan Kepala Sekolah</h2>
 
             <!-- Foto Kepala Sekolah -->
-            <img src="{{ asset('storage/profile/sambutan/' . $sambutan['image']) }}" alt="Sambutan Kepala Sekolah"
+            <img src="{{ asset('storage/' . $sambutan['image']) }}" alt="Sambutan Kepala Sekolah"
                 class="w-52 object-cover rounded-md shadow-md border border-gray-300 float-left mr-4 mb-4">
 
             <!-- Konten Sambutan -->
             <div class="text-gray-800 leading-relaxed text-justify">
-                {!! Str::limit($sambutan['isi'], 1000, '...') !!}
+
+                {!! Str::limit(strip_tags($sambutan['isi']), 1000, '...') !!}
                 <!-- Read More -->
                 <a href="{{ '/' }}/sambutan"
                     class="inline-block text-blue-700 font-semibold hover:underline">
@@ -136,11 +137,11 @@
                 <div
                     class="max-w-sm w-86 sm:mx-0  mb-5 md:mx-5 bg-white border border-gray-200 rounded-lg shadow-sm  relative overflow-hidden">
                     <div>
-                        <img class="rounded-t-lg w-full" src="{{ asset('storage/berita/' . $berita['image']) }}"
+                        <img class="rounded-t-lg w-full h-60" src="{{ asset('storage/' . $berita['image']) }}"
                             alt="$berita['image']" />
                         <!-- Tanggal di atas gambar -->
                         <div
-                            class="absolute top-48 md:top-52 left-3 bg-blue-950 bg-opacity-80 text-center px-3 py-2 rounded-md">
+                            class="absolute top-37 md:top-39 left-3 bg-blue-950 bg-opacity-80 text-center px-3 py-2 rounded-md">
                             <span class="block text-3xl font-bold text-yellow-400">{{ $tanggal }}</span>
                             <span class="block text-sm text-white">{{ $bulan }}, {{ $tahun }}</span>
                         </div>
@@ -151,7 +152,7 @@
                                 {{ Str::limit($berita['judul'], 60, '...') }}</h5>
                         </a>
                         <p class="my-6 font-normal text-sm text-gray-700 text-justify">
-                            {{ Str::limit($berita['isi'], 120, '...') }}
+                            {!! Str::limit(strip_tags($berita['isi']), 100, '...') !!}
                         </p>
                         <a href="{{ url('/') }}/berita/{{ $berita['id_berita'] }}"
                             class="my-3 font-bold text-blue-950 flex items-center gap-1 hover:underline">Read More
@@ -191,7 +192,7 @@
             @foreach ($prestasis as $prestasi)
                 <div class="flex justify-start bg-white shadow-lg rounded-lg overflow-hidden flex-wrap my-10">
                     <!-- Bagian Gambar -->
-                    <img src="{{ asset('storage/prestasi/' . $prestasi['image']) }}" alt="{{ $prestasi['image'] }}"
+                    <img src="{{ asset('storage/' . $prestasi['image']) }}" alt="{{ $prestasi['image'] }}"
                         class="w-full md:w-1/2 h-72 object-cover">
 
                     <!-- Bagian Konten -->
@@ -285,8 +286,8 @@
         <div class="flex flex-wrap justify-start md:mx-20 mx-10">
             @foreach ($ekstrakurikulers as $ekstrakurikuler)
                 <div class="flex justify-start px-5 bg-white rounded-md py-6 items-center md:w-70 w-full mx-2 my-2">
-                    <img src="{{ asset('storage/prestasi/' . $ekstrakurikuler['logo']) }}"
-                        alt="$ekstrakurikuler['logo']" class="size-20">
+                    <img src="{{ asset('storage/' . $ekstrakurikuler['logo']) }}" alt="$ekstrakurikuler['logo']"
+                        class="size-20">
                     <span class="text-gray-800 text-4xl">{{ $ekstrakurikuler['nama'] }}</span>
                 </div>
             @endforeach

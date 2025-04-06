@@ -7,10 +7,14 @@ use App\Http\Controllers\public\Kontak;
 use App\Http\Controllers\public\Layanan;
 use App\Http\Controllers\public\Prestasi;
 use App\Http\Controllers\public\Profile;
+use App\Http\Controllers\public\Search;
 use Illuminate\Support\Facades\Route;
 
 //home
 Route::get('/', [Home::class, 'index']);
+
+//search
+Route::get('/search', [Search::class, 'index']);
 
 //profile sekolah
 Route::get('/sambutan', [Profile::class, 'sambutan']);

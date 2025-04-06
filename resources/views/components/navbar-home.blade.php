@@ -4,16 +4,15 @@
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="flex h-20 items-center justify-between">
             <div class="flex items-center">
-                <div class="shrink-0 flex items-center justify-between">
-                    <img class="size-20 pr-3 w-20" src="{{ asset('storage/logo/' . $profile['logo']) }}"
-                        alt="Your Company">
-                    <a href="{{ url('/') }}/" id="text-logo"
+                <a href="{{ url('/') }}/" class="shrink-0 flex items-center justify-between">
+                    <img class="size-20 pr-3 w-20" src="{{ asset('storage/' . $profile['logo']) }}" alt="Your Company">
+                    <div id="text-logo"
                         class="text-blue-950 {{ $page == 'Home' ? 'md:text-white' : '' }}  rounded-md px-3 py-2 text-sm lg:text-3xl font-bold "
                         aria-current="page"><span
                             style="text-transform: uppercase">{{ $profile['nama_sekolah'] }}</span>
                         <p class="text-sm font-normal"></p>
-                    </a>
-                </div>
+                    </div>
+                </a>
 
             </div>
             <div class="flex items-center">

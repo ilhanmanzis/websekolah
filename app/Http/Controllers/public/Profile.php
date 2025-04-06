@@ -18,7 +18,7 @@ class Profile extends Controller
         $data = [
             'title'     => 'Sambutan Kepala Sekolah',
             'page'      => 'Sambutan Kepala Sekolah',
-            'sambutan'  => Sambutan::find('1')
+            'sambutan'  => Sambutan::first()
         ];
         return view('public/profile/sambutan', $data);
     }
@@ -28,8 +28,8 @@ class Profile extends Controller
         $data = [
             'title'     => 'Sejarah',
             'page'      => 'Sejarah',
-            'sejarah'   => Sejarah::find('1'),
-            'profile'   => ModelsProfile::find('1')
+            'sejarah'   => Sejarah::first(),
+            'profile'   => ModelsProfile::first()
         ];
         return view('public/profile/sejarah', $data);
     }
@@ -39,7 +39,7 @@ class Profile extends Controller
         $data = [
             'title'     => 'Visi & Misi',
             'page'      => 'Visi & Misi',
-            'visiMisi'  => VisiMisi::find('1')
+            'visiMisi'  => VisiMisi::first()
         ];
         return view('public/profile/visimisi', $data);
     }
@@ -49,7 +49,7 @@ class Profile extends Controller
         $data = [
             'title'     => 'Struktur Organisasi Sekolah',
             'page'      => 'Struktur Organisasi Sekolah',
-            'profile'   => ModelsProfile::find('1')
+            'profile'   => ModelsProfile::first()
         ];
         return view('public/profile/organisasi_sekolah', $data);
     }
@@ -59,7 +59,7 @@ class Profile extends Controller
         $data = [
             'title' => 'Struktur Organisasi Komite Sekolah',
             'page' => 'Struktur Organisasi Komite Sekolah',
-            'profile'   => ModelsProfile::find('1')
+            'profile'   => ModelsProfile::first()
         ];
         return view('public/profile/organisasi_komite', $data);
     }
@@ -70,7 +70,7 @@ class Profile extends Controller
             'title'     => 'Staf Tenaga Pendidik',
             'page'      => 'Staf Tenaga Pendidik',
             'pendidiks'  => TenagaPendidik::with('mataPelajaran')->get(),
-            'profile'       => ModelsProfile::find('1')
+            'profile'       => ModelsProfile::first()
         ];
 
 
@@ -83,7 +83,7 @@ class Profile extends Controller
             'title'         => 'Staf Tenaga Kependidikan',
             'page'          => 'Staf Tenaga Kependidikan',
             'kependidikans'  => TenagaKependidikan::all(),
-            'profile'       => ModelsProfile::find('1')
+            'profile'       => ModelsProfile::first()
         ];
         return view('public/profile/staf_kependidikan', $data);
     }

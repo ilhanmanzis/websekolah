@@ -11,12 +11,12 @@
 
 
         <div class="my-5 border-b border-gray-300 pb-10">
-            <img src="{{ asset('storage/berita/' . $berita['image']) }}" alt="{{ $berita['image'] }}" class="w-full">
+            <img src="{{ asset('storage/' . $berita['image']) }}" alt="{{ $berita['image'] }}" class="w-full">
             <h2 class="text-blue-950 text-2xl font-bold mt-10">{{ $berita['judul'] }}</h2>
         </div>
         <div class="text-gray-700">
 
-            <div class="my-5 text-justify">
+            <div class="prose max-w-none my-5 text-justify">
                 {!! $berita['isi'] !!}
             </div>
         </div>

@@ -9,8 +9,8 @@
 
 
         <div class="my-5 border-t border-gray-300 pt-5">
-            <img src="{{ asset('storage/profile/struktur/sekolah/' . $profile['organisasi_sekolah']) }}"
-                alt="{{ $profile['organisasi_sekolah'] }}" class="w-full">
+            <img src="{{ asset('storage/' . $profile['organisasi_sekolah']) }}" alt="{{ $profile['organisasi_sekolah'] }}"
+                class="w-full">
         </div>
 
 

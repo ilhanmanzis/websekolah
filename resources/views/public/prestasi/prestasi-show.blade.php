@@ -11,7 +11,7 @@
 
 
         <div class="my-5 border-b border-gray-300 pb-5">
-            <img src="{{ asset('storage/prestasi/' . $prestasi['image']) }}" alt="{{ $prestasi['image'] }}" class="w-full">
+            <img src="{{ asset('storage/' . $prestasi['image']) }}" alt="{{ $prestasi['image'] }}" class="w-full">
             <h2 class="text-blue-950 text-2xl font-bold mt-10">{{ $prestasi['judul'] }}</h2>
             <div class="flex items-center text-sm mt-2 text-gray-700">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -63,7 +63,7 @@
         </div>
         <div class="text-gray-700">
 
-            <div class="my-5">
+            <div class="prose max-w-none text-justify my-5">
                 {!! $prestasi['isi'] !!}
             </div>
         </div>

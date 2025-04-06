@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -18,9 +19,9 @@ class InfoSekolahFactory extends Factory
     {
         return [
             "judul"     => "PENILAIAN AKHIR SEMESTER GANJIL T.P. 2024/2025",
-            "isi"       => "shsghfjsdkjfhgsdjhfhkjdfh",
-            "tanggal"       => "21 Februari 2025",
-            "image"     => "bg.jpg"
+            "isi"       => $this->faker->paragraphs(5, true),
+            "tanggal"       => Carbon::parse($this->faker->date())->translatedFormat('d F Y'),
+            "image"     => "info/bg.jpg"
         ];
     }
 }

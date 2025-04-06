@@ -21,12 +21,14 @@ class Home extends Controller
             'title'              => 'SMA N 1 KASUI',
             'posters'            => Poster::latest()->get(),
             'infos'              => InfoSekolah::latest()->take(4)->get(),
-            'sambutan'           => Sambutan::find('1'),
+            'sambutan'           => Sambutan::first(),
             'beritas'            => Berita::latest()->take(4)->get(),
             'prestasis'          => Prestasi::latest()->take(4)->get(),
             'ekstrakurikulers'   => Ekstrakurikuler::all(),
-            'kontak'             => Kontak::find('1')
+            'kontak'             => Kontak::first()
         ];
+
+
         return view('public/home', $data);
     }
 }
