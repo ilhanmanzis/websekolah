@@ -9,8 +9,7 @@
 
 
         <div class="my-5 border-b border-gray-300 pb-10">
-            <img src="{{ asset('storage/layanan/perpustakaan/' . $perpustakaan['image']) }}"
-                alt="{{ $perpustakaan['image'] }}" class="w-full">
+            <img src="{{ asset('storage/' . $perpustakaan['image']) }}" alt="{{ $perpustakaan['image'] }}" class="w-full">
         </div>
         <div class="text-gray-700">
             <div class="text-center mb-10">
@@ -20,9 +19,9 @@
                     <div class="w-12 h-1 bg-yellow-400"></div>
                 </div>
             </div>
-            <p class="my-5">
+            <div class="prose max-w-none text-justify my-5">
                 {!! $perpustakaan['isi'] !!}
-            </p>
+            </div>
         </div>
 
     </div>

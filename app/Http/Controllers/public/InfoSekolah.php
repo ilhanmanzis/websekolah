@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\InfoSekolah as ModelsInfoSekolah;
 use Illuminate\Http\Request;
 
+
 class InfoSekolah extends Controller
 {
     public function index()
@@ -13,7 +14,7 @@ class InfoSekolah extends Controller
         $data = [
             'title'     => 'Info Sekolah',
             'page'      => 'Info Sekolah',
-            'sekolahs'  => ModelsInfoSekolah::all()
+            'sekolahs'  => ModelsInfoSekolah::filter()->latest()->paginate(10)->withQueryString()
         ];
         return view('public/berita/info', $data);
     }

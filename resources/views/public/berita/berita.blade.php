@@ -8,6 +8,7 @@
         </x-url>
 
         <div class="w-full my-5 flex justify-start flex-wrap">
+
             {{-- start sidebar --}}
             <div class="max-w-sm md:pr-8 pr-3">
                 <div class="mb-5  ">
@@ -28,9 +29,9 @@
                                     stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
                             </svg>
                         </div>
-                        <input type="search" id="default-search"
+                        <input type="search" id="default-search" name="search"
                             class="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 "
-                            placeholder="" required />
+                            placeholder="Cari Berita..." autocomplete="off" required />
                         <button type="submit"
                             class="text-white absolute end-2.5 bottom-2.5 bg-blue-950 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 s">Search</button>
                     </div>
@@ -41,6 +42,9 @@
 
             {{-- start berita --}}
             <div class="max-w-full md:w-2/3 w-full md:p-5 p-0 md:mt-0 mt-10">
+                <div class="pl-5 w-full my-5">
+                    {{ $beritas->links() }}
+                </div>
                 @foreach ($beritas as $berita)
                     <?php $parts = explode(' ', $berita['tanggal']);
                     $tanggal = $parts[0];
@@ -50,7 +54,7 @@
                     <div
                         class="max-w-full w-full sm:mx-0  mb-5 md:mx-5 bg-white border border-gray-200 shadow-sm   relative overflow-hidden">
                         <div>
-                            <img class="h-80 w-full" src="{{ asset('storage/berita/' . $berita['image']) }}"
+                            <img class="h-80 w-full" src="{{ asset('storage/' . $berita['image']) }}"
                                 alt="{{ $berita['image'] }}" />
                             <!-- Tanggal di atas gambar -->
                             <div
@@ -64,9 +68,9 @@
                                 <h5 class="mb-2 text-xl font-bold tracking-tight text-blue-950  hover:text-yellow-500">
                                     {{ Str::limit($berita['judul'], 60, '...') }}</h5>
                             </a>
-                            <p class="my-6 font-normal text-sm text-gray-700 ">
-                                {{ Str::limit($berita['isi'], 100, '...') }}
-                            </p>
+                            <div class="prose max-w-none my-6 font-normal text-sm text-gray-700 ">
+                                {!! Str::limit(strip_tags($berita['isi']), 100, '...') !!}
+                            </div>
                             <a href="{{ url('/') }}/berita/{{ $berita['id_berita'] }}"
                                 class="my-3 font-bold text-blue-950 flex items-center gap-1 hover:underline">Read More
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"

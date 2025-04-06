@@ -17,9 +17,9 @@ class VisiMisiFactory extends Factory
     public function definition(): array
     {
         return [
-            "visi"  => "hsdgskjafh",
-            "misi"  => "ashdkhsajdhskja",
-            "image" => "bg.jpg"
+            "visi"  => $this->faker->paragraphs(5, true),
+            "misi"  => $this->faker->paragraphs(5, true),
+            "image" => "profile/visimisi/bg.jpg"
         ];
     }
 }

@@ -19,7 +19,7 @@ class TenagaKependidikanFactory extends Factory
         return [
             "nama"      => "Ilhan Manzis",
             "status"    => "Tenaga Kependidikan",
-            "foto"      => "a.jpg"
+            "foto"      => "profile/staf/kependidikan/a.jpg"
         ];
     }
 }

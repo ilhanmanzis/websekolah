@@ -13,7 +13,7 @@ class Prestasi extends Controller
         $data = [
             'title'         => 'Prestasi',
             'page'          => 'Prestasi',
-            'prestasis'     => ModelsPrestasi::all()
+            'prestasis'     => ModelsPrestasi::filter()->latest()->paginate(10)->withQueryString()
         ];
         return view('public/prestasi/prestasi', $data);
     }

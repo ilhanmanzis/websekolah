@@ -10,10 +10,11 @@ class Berita extends Controller
 {
     public function index()
     {
+
         $data = [
             'title'     => 'Berita Terbaru',
             'page'      => 'Berita Terbaru',
-            'beritas'   => ModelsBerita::all()
+            'beritas'   => ModelsBerita::filter()->latest()->paginate(10)->withQueryString()
         ];
 
         return view('public/berita/berita', $data);

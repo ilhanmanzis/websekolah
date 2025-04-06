@@ -17,7 +17,7 @@ class Layanan extends Controller
             'title'             => 'Ekstrakurikuler',
             'page'              => 'Ekstrakurikuler',
             'ekstrakurikulers'  => Ekstrakurikuler::all(),
-            'profile'           => Profile::find('1')
+            'profile'           => Profile::first()
 
         ];
         return view('public/layanan/ekstrakurikuler', $data);
@@ -28,7 +28,7 @@ class Layanan extends Controller
         $data = [
             'title'         => 'Laboratorium',
             'page'          => 'Laboratorium',
-            'laboratorium'  => Laboratorium::find('1')
+            'laboratorium'  => Laboratorium::first()
         ];
         return view('public/layanan/laboratorium', $data);
     }
@@ -38,7 +38,7 @@ class Layanan extends Controller
         $data = [
             'title'         => 'Perpustakaan',
             'page'          => 'Perpustakaan',
-            'perpustakaan'  => Perpustakaan::find('1')
+            'perpustakaan'  => Perpustakaan::first()
         ];
         return view('public/layanan/perpustakaan', $data);
     }

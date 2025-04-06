@@ -23,7 +23,7 @@ class Layout extends Component
     public function render(): View|Closure|string
     {
         $data = [
-            "icon_website"  => Profile::find('1')
+            "icon_website"  => Profile::first()
         ];
         return view('components.layout', $data);
     }

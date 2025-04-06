@@ -19,7 +19,7 @@ class TenagaPendidikFactory extends Factory
         return [
             "id_mata_pelajaran" => 1,
             "nama"              => "Ilhan Manzis",
-            "foto"              => "a.jpg"
+            "foto"              => "profile/staf/pendidik/a.jpg"
         ];
     }
 }

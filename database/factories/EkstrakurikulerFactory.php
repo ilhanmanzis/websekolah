@@ -18,7 +18,7 @@ class EkstrakurikulerFactory extends Factory
     {
         return [
             "nama"  => "Pramuka",
-            "logo"  => "logo.png"
+            "logo"  => "layanan/ekstrakurikuler/logo.png"
         ];
     }
 }

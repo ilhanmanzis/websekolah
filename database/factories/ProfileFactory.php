@@ -19,13 +19,13 @@ class ProfileFactory extends Factory
         return [
             "nama_sekolah"         => "SMA N 1 KASUI",
             "motto"                => "BERPRESTASI DAN BERBUDAYA",
-            "image_banner"         => "bg.jpg",
-            "logo"                 => "logo.png",
-            "organisasi_sekolah"   => "bg.jpg",
-            "organisasi_komite"    => "bg.jpg",
-            "foto_pendidik"        => "bg.jpg",
-            "foto_kependidikan"    => "bg.jpg",
-            "ekstrakurikuler"    => "bg.jpg"
+            "image_banner"         => "banner/bg.jpg",
+            "logo"                 => "logo/logo.png",
+            "organisasi_sekolah"   => "profile/struktur/sekolah/bg.jpg",
+            "organisasi_komite"    => "profile/struktur/komite/bg.jpg",
+            "foto_pendidik"        => "profile/staf/pendidik/banner/bg.jpg",
+            "foto_kependidikan"    => "profile/staf/kependidikan/banner/bg.jpg",
+            "ekstrakurikuler"    => "layanan/ekstrakurikuler/banner/bg.jpg"
         ];
     }
 }

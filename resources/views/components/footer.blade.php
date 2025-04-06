@@ -5,12 +5,11 @@
             <!-- Logo & Deskripsi -->
             <div class="max-w-sm">
                 <h1 class="text-2xl font-bold flex items-center">
-                    <img src="{{ asset('storage/logo/' . $profile['logo']) }}" alt="Logo"
-                        class="size-20 h-full mr-5" />
+                    <img src="{{ asset('storage/' . $profile['logo']) }}" alt="Logo" class="size-20 h-full mr-5" />
                     <span>{{ $profile['nama_sekolah'] }}</span>
                 </h1>
                 <p class="mt-4 text-white text-justify pr-5">
-                    {!! Str::limit($sejarah['isi'], 240, '...') !!}
+                    {!! Str::limit(strip_tags($sejarah['isi']), 240, '...') !!}
                 </p>
                 <!-- Sosial Media -->
                 <div class="flex space-x-4 mt-6 border-t border-dashed pt-4 mr-5">
@@ -73,14 +72,14 @@
                 <div class="space-y-4">
                     @foreach ($infos as $info)
                         <div class="flex space-x-4 border-b border-dashed">
-                            <img src="{{ asset('storage/banner/' . $info['image']) }}" alt="{{ $info['image'] }}"
+                            <img src="{{ asset('storage/' . $info['image']) }}" alt="{{ $info['image'] }}"
                                 class="w-18 h-18 rounded-lg" />
                             <div>
                                 <a href="{{ url('/') }}/info/{{ $info['id_info'] }}"
                                     class="hover:text-white text-yellow-400 font-semibold">{{ Str::limit($info['judul'], 20, '...') }}</a>
                                 <p class="text-white text-sm py-2">{{ $info['tanggal'] }}</p>
                                 <p class="text-white text-justify pr-2 pb-4">
-                                    {{ Str::limit($info['isi'], 50, '...') }}
+                                    {!! Str::limit(strip_tags($info['isi']), 100, '...') !!}
                                 </p>
                             </div>
                         </div>
@@ -100,14 +99,14 @@
                 <div class="space-y-4">
                     @foreach ($beritas as $berita)
                         <div class="flex space-x-4 border-b border-dashed">
-                            <img src="{{ asset('storage/banner/' . $berita['image']) }}" alt="Info 1"
+                            <img src="{{ asset('storage/' . $berita['image']) }}" alt="Info 1"
                                 class="w-18 h-18 rounded-lg" />
                             <div>
                                 <a href="{{ url('/') }}/berita/{{ $berita['id_berita'] }}"
                                     class="hover:text-white text-yellow-400 font-semibold">{{ Str::limit($berita['judul'], 20, '...') }}</a>
                                 <p class="text-white text-sm py-2">{{ $berita['tanggal'] }}</p>
                                 <p class="text-white text-justify pr-2 pb-4">
-                                    {{ Str::limit($berita['isi'], 50, '...') }}
+                                    {!! Str::limit(strip_tags($berita['isi']), 100, '...') !!}
                                 </p>
                             </div>
                         </div>

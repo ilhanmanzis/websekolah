@@ -13,7 +13,7 @@ class Kontak extends Controller
         $data = [
             'title'     => 'Kontak',
             'page'      => 'Kontak',
-            'kontak'    => ModelsKontak::find('1')
+            'kontak'    => ModelsKontak::first()
         ];
         return view('public/kontak', $data);
     }
