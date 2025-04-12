@@ -24,11 +24,20 @@ class UserFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => "admin ",
-            'email' => "admin@gmail.com",
-            'email_verified_at' => now(),
-            'password' => static::$password ??= Hash::make('admin123'),
-            'remember_token' => Str::random(10),
+            'id' => 1,
+            'name' => 'admin',
+            'email' => 'admin@gmail.com',
+            'email_verified_at' => NULL,
+            'password' => '$2y$12$2wr3tuPUH1jXDlqY.y4l9e5aI.QYdJKw.5RBmv6sOVr3JhohXwy7S',
+
+            // password "admin123" kalo misalkan tidak bisa pake perintah "php artisan make:filament-user" untuk membuat user baru
+
+
+            'remember_token' => NULL,
+            'created_at' => '2025-04-05 12:35:36',
+            'updated_at' => '2025-04-12 10:14:36',
+            'custom_fields' => NULL,
+            'avatar_url' => NULL,
         ];
     }
 

@@ -17,9 +17,12 @@ class TenagaKependidikanFactory extends Factory
     public function definition(): array
     {
         return [
-            "nama"      => "Ilhan Manzis",
-            "status"    => "Tenaga Kependidikan",
-            "foto"      => "profile/staf/kependidikan/a.jpg"
+            'id_tenaga_kependidikan' => 1,
+            'nama' => 'Ilhan Manzis',
+            'status' => 'Tenaga Kependidikan',
+            'foto' => 'profile/staf/kependidikan/a.jpg',
+            'created_at' => '2025-04-05 12:35:11',
+            'updated_at' => '2025-04-05 12:35:11',
         ];
     }
 }

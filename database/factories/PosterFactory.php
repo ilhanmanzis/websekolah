@@ -17,7 +17,10 @@ class PosterFactory extends Factory
     public function definition(): array
     {
         return [
-            "image" => "poster/bg.jpg"
+            'id_poster' => 1,
+            'image' => 'poster/bg.jpg',
+            'created_at' => '2025-04-05 12:35:11',
+            'updated_at' => '2025-04-05 12:35:11',
         ];
     }
 }

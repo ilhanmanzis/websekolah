@@ -17,7 +17,10 @@ class MataPelajaranFactory extends Factory
     public function definition(): array
     {
         return [
-            "nama_mata_pelajaran"   => "Matematika"
+            'id_mata_pelajaran' => 1,
+            'nama_mata_pelajaran' => 'Matematika',
+            'created_at' => '2025-04-05 12:35:11',
+            'updated_at' => '2025-04-05 12:35:11',
         ];
     }
 }

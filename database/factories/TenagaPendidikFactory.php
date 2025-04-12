@@ -17,9 +17,12 @@ class TenagaPendidikFactory extends Factory
     public function definition(): array
     {
         return [
-            "id_mata_pelajaran" => 1,
-            "nama"              => "Ilhan Manzis",
-            "foto"              => "profile/staf/pendidik/a.jpg"
+            'id_tenaga_pendidik' => 1,
+            'id_mata_pelajaran' => 1,
+            'nama' => 'Ilhan Manzis',
+            'foto' => 'profile/staf/pendidik/a.jpg',
+            'created_at' => '2025-04-05 12:35:11',
+            'updated_at' => '2025-04-05 12:35:11',
         ];
     }
 }

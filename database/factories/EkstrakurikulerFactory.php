@@ -17,8 +17,11 @@ class EkstrakurikulerFactory extends Factory
     public function definition(): array
     {
         return [
-            "nama"  => "Pramuka",
-            "logo"  => "layanan/ekstrakurikuler/logo.png"
+            'id_ekstrakurikuler' => 1,
+            'nama' => 'Pramuka',
+            'logo' => 'layanan/ekstrakurikuler/logo.png',
+            'created_at' => '2025-04-05 12:35:11',
+            'updated_at' => '2025-04-05 12:35:11',
         ];
     }
 }
