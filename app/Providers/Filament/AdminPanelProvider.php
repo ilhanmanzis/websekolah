@@ -66,7 +66,7 @@ class AdminPanelProvider extends PanelProvider
                 Authenticate::class,
             ])
             ->brandName("Panel SMA N 1 KASUI")
-            ->favicon(asset('storage/' . $profile['logo']))
+            ->favicon(asset('storage/logo/logo.png'))
             ->plugins([
                 FilamentEditProfilePlugin::make()
                     ->shouldRegisterNavigation(false)
