@@ -15,6 +15,34 @@
                         <img src="{{ asset('storage/' . $poster['image']) }}"
                             class="absolute inset-0 w-full h-full object-cover" alt="{{ $poster['image'] }}">
                     </div>
+                    <!-- Modal -->
+                    <div id="imageModal" class="fixed inset-0 z-50 hidden bg-black/80 items-center justify-center p-4">
+                        <img id="modalImage" src="" alt="Preview"
+                            class="max-h-[90vh] max-w-full rounded shadow-lg border-4 border-white">
+                    </div>
+                    <img src="{{ asset('storage/' . $poster['image']) }}"
+                        class="absolute inset-0 w-full h-full object-cover cursor-zoom-in" alt="{{ $poster['image'] }}">
+
+
+                    <script>
+                        document.querySelectorAll('[data-carousel-item] img').forEach(img => {
+                            img.addEventListener('click', function() {
+                                const modal = document.getElementById('imageModal');
+                                const modalImage = document.getElementById('modalImage');
+                                modalImage.src = this.src;
+                                modal.classList.remove('hidden');
+                                modal.classList.add('flex');
+                            });
+                        });
+
+                        // Klik di mana saja di luar gambar untuk menutup
+                        document.getElementById('imageModal').addEventListener('click', function(e) {
+                            if (e.target === this) {
+                                this.classList.add('hidden');
+                                this.classList.remove('flex');
+                            }
+                        });
+                    </script>
                 @endforeach
             </div>
 
@@ -45,34 +73,7 @@
                     <span class="sr-only">Next</span>
                 </span>
             </button>
-            <!-- Modal -->
-            <div id="imageModal" class="fixed inset-0 z-50 hidden bg-black/80 items-center justify-center p-4">
-                <img id="modalImage" src="" alt="Preview"
-                    class="max-h-[90vh] max-w-full rounded shadow-lg border-4 border-white">
-            </div>
-            <img src="{{ asset('storage/' . $poster['image']) }}"
-                class="absolute inset-0 w-full h-full object-cover cursor-zoom-in" alt="{{ $poster['image'] }}">
 
-
-            <script>
-                document.querySelectorAll('[data-carousel-item] img').forEach(img => {
-                    img.addEventListener('click', function() {
-                        const modal = document.getElementById('imageModal');
-                        const modalImage = document.getElementById('modalImage');
-                        modalImage.src = this.src;
-                        modal.classList.remove('hidden');
-                        modal.classList.add('flex');
-                    });
-                });
-
-                // Klik di mana saja di luar gambar untuk menutup
-                document.getElementById('imageModal').addEventListener('click', function(e) {
-                    if (e.target === this) {
-                        this.classList.add('hidden');
-                        this.classList.remove('flex');
-                    }
-                });
-            </script>
         </div>
 
 
