@@ -65,7 +65,7 @@ class AdminPanelProvider extends PanelProvider
             ->authMiddleware([
                 Authenticate::class,
             ])
-            ->brandName('Panel ' . $profile['nama_sekolah'])
+            ->brandName("Panel SMA N 1 KASUI")
             ->favicon(asset('storage/' . $profile['logo']))
             ->plugins([
                 FilamentEditProfilePlugin::make()
