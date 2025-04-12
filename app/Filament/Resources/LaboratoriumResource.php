@@ -77,4 +77,8 @@ class LaboratoriumResource extends Resource
             'edit' => Pages\EditLaboratorium::route('/{record}/edit'),
         ];
     }
+    public static function getNavigationSort(): ?int
+    {
+        return 10;
+    }
 }

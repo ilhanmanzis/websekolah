@@ -125,4 +125,8 @@ class ProfileResource extends Resource
             'edit' => Pages\EditProfile::route('/{record}/edit'),
         ];
     }
+    public static function getNavigationSort(): ?int
+    {
+        return 100;
+    }
 }

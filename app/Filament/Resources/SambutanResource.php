@@ -62,4 +62,8 @@ class SambutanResource extends Resource
             'edit' => Pages\EditSambutan::route('/{record}/edit'),
         ];
     }
+    public static function getNavigationSort(): ?int
+    {
+        return 5;
+    }
 }

@@ -94,4 +94,8 @@ class TenagaKependidikanResource extends Resource
             'edit' => Pages\EditTenagaKependidikan::route('/{record}/edit'),
         ];
     }
+    public static function getNavigationSort(): ?int
+    {
+        return 14;
+    }
 }

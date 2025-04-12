@@ -123,4 +123,8 @@ class PrestasiResource extends Resource
             'edit' => Pages\EditPrestasi::route('/{record}/edit'),
         ];
     }
+    public static function getNavigationSort(): ?int
+    {
+        return 4;
+    }
 }

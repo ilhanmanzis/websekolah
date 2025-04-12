@@ -112,4 +112,8 @@ class InfoSekolahResource extends Resource
             'edit' => Pages\EditInfoSekolah::route('/{record}/edit'),
         ];
     }
+    public static function getNavigationSort(): ?int
+    {
+        return 3;
+    }
 }

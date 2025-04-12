@@ -76,4 +76,8 @@ class MataPelajaranResource extends Resource
             'edit' => Pages\EditMataPelajaran::route('/{record}/edit'),
         ];
     }
+    public static function getNavigationSort(): ?int
+    {
+        return 13;
+    }
 }

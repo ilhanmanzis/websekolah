@@ -80,4 +80,8 @@ class VisiMisiResource extends Resource
             'edit' => Pages\EditVisiMisi::route('/{record}/edit'),
         ];
     }
+    public static function getNavigationSort(): ?int
+    {
+        return 7;
+    }
 }

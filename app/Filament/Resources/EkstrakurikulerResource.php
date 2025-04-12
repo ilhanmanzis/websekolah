@@ -87,4 +87,8 @@ class EkstrakurikulerResource extends Resource
             'edit' => Pages\EditEkstrakurikuler::route('/{record}/edit'),
         ];
     }
+    public static function getNavigationSort(): ?int
+    {
+        return 9;
+    }
 }

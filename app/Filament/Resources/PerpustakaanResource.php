@@ -77,4 +77,8 @@ class PerpustakaanResource extends Resource
             'edit' => Pages\EditPerpustakaan::route('/{record}/edit'),
         ];
     }
+    public static function getNavigationSort(): ?int
+    {
+        return 12;
+    }
 }

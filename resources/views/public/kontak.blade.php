@@ -118,7 +118,7 @@
             </div>
 
             {{-- start kotak saran --}}
-            <div class="text-blue-950 text-2xl font-bold">Kotak Saran</div>
+            {{-- <div class="text-blue-950 text-2xl font-bold">Kotak Saran</div>
             <form class="max-w-12/12 py-5">
                 <div class="mb-5">
                     <input type="text" id="name"
@@ -146,7 +146,7 @@
                 <button type="submit"
                     class="text-white bg-blue-950 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center ">Kirim
                     Pesan</button>
-            </form>
+            </form> --}}
 
             {{-- end kotak saran --}}
 

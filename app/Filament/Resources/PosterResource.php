@@ -81,4 +81,8 @@ class PosterResource extends Resource
             'edit' => Pages\EditPoster::route('/{record}/edit'),
         ];
     }
+    public static function getNavigationSort(): ?int
+    {
+        return 1;
+    }
 }

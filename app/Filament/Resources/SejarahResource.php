@@ -75,4 +75,8 @@ class SejarahResource extends Resource
             'edit' => Pages\EditSejarah::route('/{record}/edit'),
         ];
     }
+    public static function getNavigationSort(): ?int
+    {
+        return 6;
+    }
 }

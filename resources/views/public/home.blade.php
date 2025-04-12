@@ -45,7 +45,38 @@
                     <span class="sr-only">Next</span>
                 </span>
             </button>
+            <!-- Modal -->
+            <div id="imageModal" class="fixed inset-0 z-50 hidden bg-black/80 items-center justify-center p-4">
+                <img id="modalImage" src="" alt="Preview"
+                    class="max-h-[90vh] max-w-full rounded shadow-lg border-4 border-white">
+            </div>
+            <img src="{{ asset('storage/' . $poster['image']) }}"
+                class="absolute inset-0 w-full h-full object-cover cursor-zoom-in" alt="{{ $poster['image'] }}">
+
+
+            <script>
+                document.querySelectorAll('[data-carousel-item] img').forEach(img => {
+                    img.addEventListener('click', function() {
+                        const modal = document.getElementById('imageModal');
+                        const modalImage = document.getElementById('modalImage');
+                        modalImage.src = this.src;
+                        modal.classList.remove('hidden');
+                        modal.classList.add('flex');
+                    });
+                });
+
+                // Klik di mana saja di luar gambar untuk menutup
+                document.getElementById('imageModal').addEventListener('click', function(e) {
+                    if (e.target === this) {
+                        this.classList.add('hidden');
+                        this.classList.remove('flex');
+                    }
+                });
+            </script>
         </div>
+
+
+
 
         {{-- end poster --}}
 
@@ -406,7 +437,7 @@
         </div>
 
         {{-- start kotak saran --}}
-        <div class="text-blue-950 mx-20 text-2xl font-bold">Kotak Saran</div>
+        {{-- <div class="text-blue-950 mx-20 text-2xl font-bold">Kotak Saran</div>
         <form class="max-w-12/12 md:mx-20 py-5 mx-5">
             <div class="mb-5">
                 <input type="text" id="name"
@@ -434,7 +465,7 @@
             <button type="submit"
                 class="text-white bg-blue-950 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center ">Kirim
                 Pesan</button>
-        </form>
+        </form> --}}
 
         {{-- end kotak saran --}}
 

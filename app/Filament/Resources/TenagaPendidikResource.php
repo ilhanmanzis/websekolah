@@ -97,4 +97,8 @@ class TenagaPendidikResource extends Resource
             'edit' => Pages\EditTenagaPendidik::route('/{record}/edit'),
         ];
     }
+    public static function getNavigationSort(): ?int
+    {
+        return 15;
+    }
 }

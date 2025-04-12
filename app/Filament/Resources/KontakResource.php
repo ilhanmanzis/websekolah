@@ -87,4 +87,8 @@ class KontakResource extends Resource
             'edit' => Pages\EditKontak::route('/{record}/edit'),
         ];
     }
+    public static function getNavigationSort(): ?int
+    {
+        return 8;
+    }
 }

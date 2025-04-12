@@ -121,4 +121,8 @@ class BeritaResource extends Resource
     {
         return 'Berita';
     }
+    public static function getNavigationSort(): ?int
+    {
+        return 2;
+    }
 }
