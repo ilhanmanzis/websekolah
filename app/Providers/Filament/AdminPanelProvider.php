@@ -29,7 +29,6 @@ class AdminPanelProvider extends PanelProvider
 {
     public function panel(Panel $panel): Panel
     {
-        $profile = Profile::first();
         return $panel
             ->default()
             ->id('admin')
@@ -65,7 +64,7 @@ class AdminPanelProvider extends PanelProvider
             ->authMiddleware([
                 Authenticate::class,
             ])
-            ->brandName("Panel SMA N 1 KASUI")
+            ->brandName("Panel SMA NEGERI 1 KASUI")
             ->favicon(asset('storage/logo/logo.png'))
             ->plugins([
                 FilamentEditProfilePlugin::make()

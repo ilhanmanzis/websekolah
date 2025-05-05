@@ -26,7 +26,6 @@ class ProfileFactory extends Factory
             'organisasi_komite' => 'profile/struktur/komite/bg.jpg',
             'foto_pendidik' => 'profile/staf/pendidik/banner/bg.jpg',
             'foto_kependidikan' => 'profile/staf/kependidikan/banner/bg.jpg',
-            'ekstrakurikuler' => 'layanan/ekstrakurikuler/banner/bg.jpg',
             'created_at' => '2025-04-05 12:35:11',
             'updated_at' => '2025-04-05 12:35:11',
         ];

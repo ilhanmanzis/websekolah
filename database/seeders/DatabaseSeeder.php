@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Berita;
 use App\Models\Ekstrakurikuler;
+use App\Models\Fasilitas;
 use App\Models\InfoSekolah;
 use App\Models\Kontak;
 use App\Models\Laboratorium;
@@ -28,7 +29,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        User::factory()->create();
+        //User::factory()->create();
         Berita::factory()->create();
         Ekstrakurikuler::factory()->create();
         InfoSekolah::factory()->create();
@@ -36,6 +37,7 @@ class DatabaseSeeder extends Seeder
         Laboratorium::factory()->create();
         MataPelajaran::factory()->create();
         Perpustakaan::factory()->create();
+        Fasilitas::factory()->create();
         Poster::factory()->create();
         Prestasi::factory()->create();
         Profile::factory()->create();

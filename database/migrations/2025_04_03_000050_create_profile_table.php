@@ -21,7 +21,6 @@ return new class extends Migration
             $table->string('organisasi_komite');
             $table->string('foto_pendidik');
             $table->string('foto_kependidikan');
-            $table->string('ekstrakurikuler');
             $table->timestamps();
         });
     }

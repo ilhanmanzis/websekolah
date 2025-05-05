@@ -33,8 +33,10 @@ Route::get('/info/{id}', [InfoSekolah::class, 'show']);
 
 //layanan
 Route::get('/ekstrakurikuler', [Layanan::class, 'ekstrakurikuler']);
+Route::get('/ekstrakurikuler/{id}', [Layanan::class, 'ekstrakurikuler_show']);
 Route::get('/laboratorium', [Layanan::class, 'laboratorium']);
 Route::get('/perpustakaan', [Layanan::class, 'perpustakaan']);
+Route::get('/fasilitas', [Layanan::class, 'fasilitas']);
 
 //prestasi
 Route::get('/prestasi', [Prestasi::class, 'index']);

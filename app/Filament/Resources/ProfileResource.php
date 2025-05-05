@@ -82,14 +82,7 @@ class ProfileResource extends Resource
                     ->preserveFilenames(false)
                     ->visibility('public')
                     ->required(),
-                Forms\Components\FileUpload::make('ekstrakurikuler')
-                    ->label('Banner Ekstrakurikuler')
-                    ->image()
-                    ->directory('layanan/ekstrakurikuler/banner')
-                    ->disk('public')
-                    ->preserveFilenames(false)
-                    ->visibility('public')
-                    ->required(),
+
             ]);
     }
 

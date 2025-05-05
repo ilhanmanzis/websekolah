@@ -157,6 +157,10 @@
                                 <x-sub-nav-link href="{{ url('/') }}/perpustakaan"
                                     :active="request()->is('/')">Perpustakaan</x-sub-nav-link>
                             </div>
+                            <div class="py-1">
+                                <x-sub-nav-link href="{{ url('/') }}/fasilitas"
+                                    :active="request()->is('/')">Fasilitas</x-sub-nav-link>
+                            </div>
 
 
                         </div>
@@ -297,6 +301,7 @@
                         :active="request()->is('/')">Laboratorium</x-sub-nav-link>
                     <x-sub-nav-link href="{{ url('/') }}/perpustakaan"
                         :active="request()->is('/')">Perpustakaan</x-sub-nav-link>
+                    <x-sub-nav-link href="{{ url('/') }}/fasilitas" :active="request()->is('/')">Fasilitas</x-sub-nav-link>
                 </div>
             </div>
 

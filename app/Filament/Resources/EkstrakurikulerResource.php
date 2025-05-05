@@ -30,6 +30,7 @@ class EkstrakurikulerResource extends Resource
                 Forms\Components\TextInput::make('nama')
                     ->label('Nama')
                     ->required()
+                    ->columnSpanFull()
                     ->maxLength(255),
                 Forms\Components\FileUpload::make('logo')
                     ->label('Logo')
@@ -39,6 +40,17 @@ class EkstrakurikulerResource extends Resource
                     ->preserveFilenames(false)
                     ->visibility('public')
                     ->required(),
+                Forms\Components\FileUpload::make('banner')
+                    ->label('banner')
+                    ->image()
+                    ->directory('layanan/ekstrakurikuler/banner')
+                    ->disk('public')
+                    ->preserveFilenames(false)
+                    ->visibility('public')
+                    ->required(),
+                Forms\Components\RichEditor::make('isi')
+                    ->required()
+                    ->columnSpanFull(),
 
                 //
             ]);
@@ -57,7 +69,10 @@ class EkstrakurikulerResource extends Resource
                     ->searchable()
                     ->wrap()
                     ->extraAttributes(['class' => 'w-1/2']),
-
+                Tables\Columns\ImageColumn::make('banner')
+                    ->url(fn($record) => asset('storage/' . $record->image))
+                    ->height(60)
+                    ->label('Banner'),
                 //
             ])
             ->defaultSort('created_at', 'desc')

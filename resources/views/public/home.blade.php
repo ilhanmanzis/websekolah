@@ -317,11 +317,12 @@
         </div>
         <div class="flex flex-wrap justify-start md:mx-20 mx-10">
             @foreach ($ekstrakurikulers as $ekstrakurikuler)
-                <div class="flex justify-start px-5 bg-white rounded-md py-6 items-center md:w-70 w-full mx-2 my-2">
+                <a href="{{ url('/') }}/ekstrakurikuler/{{ $ekstrakurikuler['id_ekstrakurikuler'] }}"
+                    class="flex justify-start px-5 bg-white rounded-md py-6 items-center md:w-70 w-full mx-2 my-2">
                     <img src="{{ asset('storage/' . $ekstrakurikuler['logo']) }}" alt="$ekstrakurikuler['logo']"
                         class="size-20">
                     <span class="text-gray-800 text-4xl">{{ $ekstrakurikuler['nama'] }}</span>
-                </div>
+                </a>
             @endforeach
         </div>
     </div>

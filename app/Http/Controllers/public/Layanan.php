@@ -4,6 +4,7 @@ namespace App\Http\Controllers\public;
 
 use App\Http\Controllers\Controller;
 use App\Models\Ekstrakurikuler;
+use App\Models\Fasilitas;
 use App\Models\Laboratorium;
 use App\Models\Perpustakaan;
 use App\Models\Profile;
@@ -21,6 +22,17 @@ class Layanan extends Controller
 
         ];
         return view('public/layanan/ekstrakurikuler', $data);
+    }
+    public function ekstrakurikuler_show(string $id)
+    {
+        $data = [
+            'title'             => 'Ekstrakurikuler',
+            'page'              => 'Ekstrakurikuler',
+            'ekstrakurikuler'  => Ekstrakurikuler::find($id),
+            'profile'           => Profile::first()
+
+        ];
+        return view('public/layanan/show_ekstrakurikuler', $data);
     }
 
     public function laboratorium()
@@ -41,5 +53,16 @@ class Layanan extends Controller
             'perpustakaan'  => Perpustakaan::first()
         ];
         return view('public/layanan/perpustakaan', $data);
+    }
+
+    public function fasilitas()
+    {
+        $data = [
+            'title'     => 'fasilitas',
+            'page'      => 'fasilitas',
+            'fasilitas' => Fasilitas::first()
+        ];
+
+        return view('public/layanan/fasilitas', $data);
     }
 }
